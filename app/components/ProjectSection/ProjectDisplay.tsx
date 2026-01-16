@@ -1,0 +1,59 @@
+import { ProjectHero } from "./ProjectHero"
+import { BeforeAfterSection } from "./BeforeAfterSection"
+import { ResultsSection } from "./ResultsSection"
+import { ApproachSection } from "./ApproachSection"
+import { LargeReview } from "../LargeReview"
+import { MoreProjectsSection } from "./MoreProjectsSection"
+import { ProjectData } from "../../data/project-data"
+import { RecruiterContact } from "../RecruiterContact"
+import Script from "next/script"
+import { buildProjectGraphMinimal } from "@/config/schemas"
+import Image from "next/image"
+
+const ProjectDisplay: React.FC<{ projectData: ProjectData }> = ({ projectData }) => {
+  return (
+    <main className="overflow-hidden">
+      <Script
+        id="id-project-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(buildProjectGraphMinimal(projectData.slug, projectData)),
+        }}
+      />
+      <ProjectHero {...projectData.hero} />
+      {projectData.projectImage ? (
+        <section className="inside-container-large mt-12 mb-20 lg:mb-32">
+          <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-gray-100">
+            <Image
+              src={projectData.projectImage}
+              alt={`${projectData.hero.client} Project Image`}
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, 90vw"
+            />
+          </div>
+        </section>
+      ) : (
+        projectData.beforeAfter && (
+          <BeforeAfterSection
+            heroBefore={projectData.beforeAfter.heroBefore}
+            heroBeforeMobile={projectData.beforeAfter.heroBeforeMobile}
+            iframe={projectData.beforeAfter.iframe}
+            heroAfter={projectData.beforeAfter.heroAfter}
+            beforeAltText={projectData.beforeAfter.beforeAltText}
+            beforeMobileAltText={projectData.beforeAfter.beforeMobileAltText}
+            afterAltText={projectData.beforeAfter.afterAltText}
+          />
+        )
+      )}
+      {projectData.results && projectData.results.length > 0 && <ResultsSection analyticCards={projectData.results} />}
+      {projectData.phases && projectData.phases.length > 0 && <ApproachSection phases={projectData.phases} />}
+      {projectData.review && <LargeReview {...projectData.review} />}
+      <MoreProjectsSection />
+      <RecruiterContact />
+    </main>
+  )
+}
+
+export default ProjectDisplay
