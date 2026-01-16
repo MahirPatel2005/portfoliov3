@@ -6,6 +6,7 @@ import {
     apihub,
     numble,
     slippyClone,
+    dayflow,
     ProjectData
 } from "@/app/data/project-data"
 import { notFound } from "next/navigation"
@@ -19,6 +20,7 @@ const projectsMap: Record<string, ProjectData> = {
     [apihub.slug]: apihub,
     [numble.slug]: numble,
     [slippyClone.slug]: slippyClone,
+    [dayflow.slug]: dayflow,
 }
 
 // Generate static params for all projects

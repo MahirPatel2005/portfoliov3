@@ -429,6 +429,10 @@ const initialOffsets = {
     "slippy-clone": {
         x: 118.796875,
         y: -748
+    },
+    hrms: {
+        x: 118.796875,
+        y: -980.328125
     }
 };
 function useOffset(cardIds) {
@@ -516,7 +520,8 @@ var _s = __turbopack_context__.k.signature();
 const ids = [
     "apihub",
     "numble",
-    "slippy-clone"
+    "slippy-clone",
+    "hrms"
 ];
 function ProjectsGrid({ className }) {
     _s();
@@ -559,6 +564,12 @@ function ProjectsGrid({ className }) {
             s: responsiveScale,
             dx: isMobile ? -225 : -45,
             dy: isMobile ? -130 : -25
+        },
+        hrms: {
+            rot: -3,
+            s: responsiveScale,
+            dx: isMobile ? -220 : -50,
+            dy: isMobile ? -110 : -35
         }
     };
     const offsets = Object.fromEntries(ids.map((id)=>{
@@ -608,12 +619,12 @@ function ProjectsGrid({ className }) {
                     color: "#3B06D1",
                     type: "API Discovery Platform",
                     progress: progress,
-                    href: "https://github.com/mahirpatel2005",
-                    githubUrl: "https://github.com/mahirpatel2005",
+                    href: "http://apihub-pi.vercel.app/",
+                    githubUrl: "https://github.com/MahirPatel2005/0412",
                     title: "APIHub"
                 }, "apihub", false, {
                     fileName: "[project]/app/components/ProjectsGrid.tsx",
-                    lineNumber: 69,
+                    lineNumber: 70,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ProjectCard$2f$AnimatedCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatedCard"], {
@@ -624,12 +635,12 @@ function ProjectsGrid({ className }) {
                     color: "#024EFC",
                     type: "Web Game (Number Guessing)",
                     progress: progress,
-                    href: "https://github.com/mahirpatel2005",
-                    githubUrl: "https://github.com/mahirpatel2005",
+                    href: "http://numble0412.netlify.app/",
+                    githubUrl: "https://github.com/MahirPatel2005/0412",
                     title: "Numble"
                 }, "numble", false, {
                     fileName: "[project]/app/components/ProjectsGrid.tsx",
-                    lineNumber: 82,
+                    lineNumber: 83,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ProjectCard$2f$AnimatedCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatedCard"], {
@@ -640,23 +651,39 @@ function ProjectsGrid({ className }) {
                     color: "#13739C",
                     type: "UI Clone / Frontend",
                     progress: progress,
-                    href: "https://github.com/mahirpatel2005",
-                    githubUrl: "https://github.com/mahirpatel2005",
+                    href: "https://slippy1.netlify.app",
+                    githubUrl: "https://github.com/MahirPatel2005/slippy",
                     title: "Slippy Clone"
                 }, "slippy-clone", false, {
                     fileName: "[project]/app/components/ProjectsGrid.tsx",
-                    lineNumber: 96,
+                    lineNumber: 97,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ProjectCard$2f$AnimatedCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatedCard"], {
+                    src: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$images$2f$react$2d$zero$2d$ui$2d$preview$2e$jpg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$app$2f$images$2f$react$2d$zero$2d$ui$2d$preview$2e$jpg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
+                    alt: "HRMS Preview",
+                    offset: offsets["hrms"],
+                    gridId: "hrms",
+                    color: "#FF5733",
+                    type: "Dashboard / Management",
+                    progress: progress,
+                    href: "https://dayflow-final.netlify.app/",
+                    githubUrl: "https://github.com/MahirPatel2005/HRMS",
+                    title: "HRMS"
+                }, "hrms", false, {
+                    fileName: "[project]/app/components/ProjectsGrid.tsx",
+                    lineNumber: 111,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/components/ProjectsGrid.tsx",
-            lineNumber: 68,
+            lineNumber: 69,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/components/ProjectsGrid.tsx",
-        lineNumber: 67,
+        lineNumber: 68,
         columnNumber: 5
     }, this);
 }

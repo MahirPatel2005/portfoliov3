@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Icon } from "../Icon"
 import { ProjectHeroProps } from "@/app/data/project-data"
 
-export const ProjectHero: React.FC<ProjectHeroProps> = ({ title, client, year, description, categories, link }) => {
+export const ProjectHero: React.FC<ProjectHeroProps> = ({ title, client, year, description, categories, link, githubLink }) => {
   return (
     <section className="inside-container-large relative z-2 flex max-w-2xl flex-col gap-8">
       <H1 variant="medium" className="wrap-break-word">
@@ -32,15 +32,28 @@ export const ProjectHero: React.FC<ProjectHeroProps> = ({ title, client, year, d
           ))}
         </ul>
       </Typography>
-      <Link
-        href={link}
-        title={`View ${client} live site`}
-        target="_blank"
-        className="underline-hover flex w-fit items-center gap-1 text-lg text-nowrap text-black"
-      >
-        View Live Site
-        <Icon name="arrow-right" className="h-3 w-3" />
-      </Link>
+      <div className="flex flex-wrap gap-4">
+        <Link
+          href={link}
+          title={`View ${client} live site`}
+          target="_blank"
+          className="underline-hover flex w-fit items-center gap-1 text-lg text-nowrap text-black"
+        >
+          View Live Site
+          <Icon name="arrow-right" className="h-3 w-3" />
+        </Link>
+        {githubLink && (
+          <Link
+            href={githubLink}
+            title={`View ${client} code`}
+            target="_blank"
+            className="underline-hover flex w-fit items-center gap-1 text-lg text-nowrap text-black"
+          >
+            View Code
+            <Icon name="github" className="h-3 w-3" />
+          </Link>
+        )}
+      </div>
     </section>
   )
 }

@@ -16,6 +16,10 @@ const initialOffsets: Record<string, Partial<HeroOffset>> = {
     x: 118.796875,
     y: -748,
   },
+  hrms: {
+    x: 118.796875,
+    y: -980.328125,
+  },
 }
 export function useOffset(cardIds: string[]) {
   const offsetsRef = useRef(initialOffsets)

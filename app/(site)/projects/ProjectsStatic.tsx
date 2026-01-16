@@ -7,6 +7,10 @@ import entitledPreview from "@/app/images/entitled-preview-v2.webp"
 import IconSpritePreview from "@/app/images/zero-icon-sprite-preview.jpg"
 import zeroPreview from "@/app/images/react-zero-ui-preview.jpg"
 import vetsChoiceInsurancePreview from "@/images/vets-choice-insurance-preview.webp"
+import apiHubScreenshot from "@/public/assets/apihub-screenshot.png"
+import numbleScreenshot from "@/public/assets/numble-screenshot.png"
+import slippyScreenshot from "@/public/assets/slippy-screenshot.png"
+import hrmsScreenshot from "@/public/assets/hrms-screenshot.png"
 import { Link } from "@/app/utils/Link"
 import { externalLinks, SITE_SLUGS } from "@/config/siteConfig"
 
@@ -27,41 +31,54 @@ type StaticProject = {
 export const STATIC_PROJECTS: StaticProject[] = [
   {
     id: "apihub",
-    src: zeroPreview, // Placeholder
+    src: apiHubScreenshot,
     alt: "APIHub Preview",
     color: "#3B06D1",
     type: "API Discovery Platform",
     text: "View on GitHub",
     title: "APIHub",
-    href: "https://github.com/mahirpatel2005", // User can update this to live URL
-    githubUrl: "https://github.com/mahirpatel2005",
+    href: "http://apihub-pi.vercel.app/",
+    githubUrl: "https://github.com/MahirPatel2005/0412",
     ariaLabel: "View APIHub on GitHub",
     isExternal: true,
   },
   {
     id: "numble",
-    src: bespokePreview, // Placeholder
+    src: numbleScreenshot,
     alt: "Numble Preview",
     color: "#024EFC",
     type: "Web Game (Number Guessing)",
     text: "View on GitHub",
     title: "Numble",
-    href: "https://github.com/mahirpatel2005",
-    githubUrl: "https://github.com/mahirpatel2005",
+    href: "http://numble0412.netlify.app/",
+    githubUrl: "https://github.com/MahirPatel2005/0412",
     ariaLabel: "View Numble on GitHub",
     isExternal: true,
   },
   {
     id: "slippy-clone",
-    src: iaoPreview, // Placeholder
+    src: slippyScreenshot,
     alt: "Slippy Clone Preview",
     color: "#13739C",
     type: "UI Clone / Frontend",
     text: "View on GitHub",
     title: "Slippy Clone",
-    href: "https://github.com/mahirpatel2005",
-    githubUrl: "https://github.com/mahirpatel2005",
+    href: "https://slippy1.netlify.app",
+    githubUrl: "https://github.com/MahirPatel2005/slippy",
     ariaLabel: "View Slippy Clone on GitHub",
+    isExternal: true,
+  },
+  {
+    id: "hrms",
+    src: hrmsScreenshot,
+    alt: "HRMS Preview",
+    color: "#FF5733",
+    type: "Dashboard / Management",
+    text: "View on GitHub",
+    title: "HRMS (Dayflow)",
+    href: "https://dayflow-final.netlify.app/",
+    githubUrl: "https://github.com/MahirPatel2005/HRMS",
+    ariaLabel: "View HRMS on GitHub",
     isExternal: true,
   },
 ]

@@ -15,3 +15,81 @@ Open your browser's console to view the Component stack trace.
 [00:10:01.346] Server  LOG      ✓ Compiled in 692ms
 [00:13:48.896] Server  LOG      ✓ Compiled in 661ms
 [00:14:39.075] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:18:00.457] Server  LOG      ✓ Compiled in 845ms
+[01:18:01.829] Server  LOG      ✓ Compiled in 700ms
+[01:18:12.158] Server  LOG      ✓ Compiled in 839ms
+[01:18:32.905] Server  LOG      ✓ Compiled in 706ms
+[01:18:34.745] Server  LOG      ✓ Compiled in 683ms
+[01:18:36.193] Browser ERROR   ./app/(site)/projects/[slug]/page.tsx:2:1
+Export dayflow doesn't exist in target module
+   1 | import ProjectDisplay from "@/app/components/ProjectSection/ProjectDisplay"
+>  2 | import {
+     | ^^^^^^^^
+>  3 |     bespoke,
+     | ^^^^^^^^^^^^
+>  4 |     automedicsKirkland,
+     | ^^^^^^^^^^^^
+>  5 |     iao,
+     | ^^^^^^^^^^^^
+>  6 |     apihub,
+     | ^^^^^^^^^^^^
+>  7 |     numble,
+     | ^^^^^^^^^^^^
+>  8 |     slippyClone,
+     | ^^^^^^^^^^^^
+>  9 |     dayflow,
+     | ^^^^^^^^^^^^
+> 10 |     ProjectData
+     | ^^^^^^^^^^^^
+> 11 | } from "@/app/data/project-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 | import { notFound } from "next/navigation"
+  13 | import { Metadata } from "next"
+  14 |
+
+The export dayflow was not found in module [project]/app/data/project-data.tsx [app-rsc] (ecmascript).
+Did you mean to import iao?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[01:18:37.339] Server  LOG      ✓ Compiled in 32ms
+[01:18:37.476] Browser ERROR   ./app/(site)/projects/[slug]/page.tsx:2:1
+Export dayflow doesn't exist in target module
+   1 | import ProjectDisplay from "@/app/components/ProjectSection/ProjectDisplay"
+>  2 | import {
+     | ^^^^^^^^
+>  3 |     bespoke,
+     | ^^^^^^^^^^^^
+>  4 |     automedicsKirkland,
+     | ^^^^^^^^^^^^
+>  5 |     iao,
+     | ^^^^^^^^^^^^
+>  6 |     apihub,
+     | ^^^^^^^^^^^^
+>  7 |     numble,
+     | ^^^^^^^^^^^^
+>  8 |     slippyClone,
+     | ^^^^^^^^^^^^
+>  9 |     dayflow,
+     | ^^^^^^^^^^^^
+> 10 |     ProjectData
+     | ^^^^^^^^^^^^
+> 11 | } from "@/app/data/project-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 | import { notFound } from "next/navigation"
+  13 | import { Metadata } from "next"
+  14 |
+
+The export dayflow was not found in module [project]/app/data/project-data.tsx [app-rsc] (ecmascript).
+Did you mean to import iao?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[01:33:48.444] Server  LOG      ✓ Compiled in 689ms
+[01:33:51.766] Server  LOG      ✓ Compiled in 670ms
+[01:34:35.382] Server  LOG      ✓ Compiled in 731ms
+[01:37:11.154] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:42:52.576] Server  LOG      ✓ Compiled in 836ms
+[01:43:12.260] Server  LOG      ✓ Compiled in 650ms
+[01:43:15.205] Server  LOG      ✓ Compiled in 653ms
+[01:43:17.221] Server  LOG      ✓ Compiled in 649ms
+[01:43:19.267] Server  LOG      ✓ Compiled in 647ms
+[01:43:21.284] Server  LOG      ✓ Compiled in 645ms
+[01:43:40.390] Server  LOG      ✓ Compiled in 658ms
+[01:45:47.427] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior

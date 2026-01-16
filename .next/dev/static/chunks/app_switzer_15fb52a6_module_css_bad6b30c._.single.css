@@ -1,44 +1,4 @@
 /* [project]/app/switzer_15fb52a6.module.css [app-client] (css) */
-@custom-variant faq-closed {
-  [data-faq= "closed"] & , & [data-faq= "closed"] { @slot; }
-}
-
-@custom-variant faq-open {
-  [data-faq= "open"] & , & [data-faq= "open"] { @slot; }
-}
-
-@custom-variant phase-1 {
-  [data-phase= "1"] & , & [data-phase= "1"] { @slot; }
-}
-
-@custom-variant phase-2 {
-  [data-phase= "2"] & , & [data-phase= "2"] { @slot; }
-}
-
-@custom-variant phase-3 {
-  [data-phase= "3"] & , & [data-phase= "3"] { @slot; }
-}
-
-@custom-variant phase-4 {
-  [data-phase= "4"] & , & [data-phase= "4"] { @slot; }
-}
-
-@custom-variant phase-5 {
-  [data-phase= "5"] & , & [data-phase= "5"] { @slot; }
-}
-
-@custom-variant reveal-true {
-  & :where(body[data-reveal= "true"] & ) { @slot; }
-}
-
-@custom-variant scrolled-down {
-  & :where(body[data-scrolled= "down"] & ) { @slot; }
-}
-
-@custom-variant scrolled-up {
-  & :where(body[data-scrolled= "up"] & ) { @slot; }
-}
-
 @font-face {
   font-family: switzer;
   src: url("../media/Switzer_Variable-s.p.bd58316e.woff2") format("woff2");

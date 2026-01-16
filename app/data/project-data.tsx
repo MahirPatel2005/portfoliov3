@@ -13,9 +13,10 @@ import { REVIEW_MAP, type ReviewProps } from "./review-data"
 import heroBeforeIao from "@/public/assets/iron-and-oak-before-website-design.jpg"
 import heroBeforeMobileIao from "@/public/assets/iron-and-oak-before-website-design-mobile.jpg"
 import heroAfterIao from "@/public/assets/iron-and-oak-after-website-design.png"
-import apiHubHero from "@/public/assets/iron-and-oak-website-tool.png"
-import numbleHero from "@/public/assets/iron-and-oak-media-coverage-website-research.png"
-import slippyHero from "@/public/assets/iron-and-oak-job-application-portal-web-design.png"
+import apiHubHero from "@/public/assets/apihub-screenshot.png"
+import numbleHero from "@/public/assets/numble-screenshot.png"
+import slippyHero from "@/public/assets/slippy-screenshot.png"
+import hrmsHero from "@/public/assets/hrms-screenshot.png"
 import { ApproachTabsImage } from "../components/ProjectSection/ApproachTabsImage"
 
 //   interface ProjectData {
@@ -52,6 +53,7 @@ export interface ProjectHeroProps {
   categories: string[]
   // link to the client's website
   link: string
+  githubLink?: string
 }
 
 export type ProjectData = {
@@ -447,12 +449,13 @@ export const apihub: ProjectData = {
     description:
       "I built APIHub to solve the fragmentation problem in API discovery. It's a centralized platform that aggregates public APIs, offering powerful search, categorization, and standardized documentation views. The goal was to reduce the time developers spend hunting for endpoints.",
     categories: ["React", "Next.js", "API Integration", "Platform"],
-    link: "https://github.com/mahirpatel2005",
+    link: "http://apihub-pi.vercel.app/",
+    githubLink: "https://github.com/MahirPatel2005/0412",
   },
   slug: "apihub",
   beforeAfter: {
-    heroBefore: heroBeforeIao,
-    heroBeforeMobile: heroBeforeMobileIao,
+    heroBefore: apiHubHero,
+    heroBeforeMobile: apiHubHero,
     beforeAltText: "APIHub Interface",
     beforeMobileAltText: "APIHub Mobile",
     afterAltText: "APIHub Dashboard",
@@ -516,12 +519,13 @@ export const numble: ProjectData = {
     description:
       "Inspired by Wordle, Numble challenges players to guess a daily math equation. Built with React and TypeScript, it features complex state management for game logic, local storage for streaks, and a responsive design for mobile play.",
     categories: ["React", "Game Development", "Logic", "Web App"],
-    link: "https://github.com/mahirpatel2005",
+    link: "http://numble0412.netlify.app/",
+    githubLink: "https://github.com/MahirPatel2005/0412",
   },
   slug: "numble",
   beforeAfter: {
-    heroBefore: heroBeforeIao,
-    heroBeforeMobile: heroBeforeMobileIao,
+    heroBefore: numbleHero,
+    heroBeforeMobile: numbleHero,
     beforeAltText: "Numble Game Board",
     beforeMobileAltText: "Numble Mobile",
     afterAltText: "Numble Win Screen",
@@ -572,12 +576,13 @@ export const slippyClone: ProjectData = {
     description:
       "A frontend engineering challenge to recreate the complex, fluid interactions of the 'Slippy' interface. This project demonstrates high-fidelity attention to detail, advanced CSS animations, and faithful component composition.",
     categories: ["UI Clone", "Frontend", "CSS Animations", "React"],
-    link: "https://github.com/mahirpatel2005",
+    link: "https://slippy1.netlify.app",
+    githubLink: "https://github.com/MahirPatel2005/slippy",
   },
   slug: "slippy-clone",
   beforeAfter: {
-    heroBefore: heroBeforeIao,
-    heroBeforeMobile: heroBeforeMobileIao,
+    heroBefore: slippyHero,
+    heroBeforeMobile: slippyHero,
     beforeAltText: "Slippy Original",
     beforeMobileAltText: "Slippy Mobile",
     afterAltText: "Slippy Clone",
@@ -609,6 +614,70 @@ export const slippyClone: ProjectData = {
       details: ["Framer Motion integration", "CSS keyframes", "Gesture handling"],
       icon: "/assets/assets-black-camera.webp",
       feature: <ApproachTabsImage src="/assets/iron-and-oak-job-application-portal-web-design.png" alt="Animation Details" />,
+    },
+  ],
+}
+
+export const dayflow: ProjectData = {
+  projectImage: hrmsHero,
+  hero: {
+    title: "HRMS: Human Resource Management System",
+    client: "Dayflow",
+    year: "2025",
+    description:
+      "A comprehensive HRMS dashboard for managing employee records, attendance, and payroll. Features a modern, intuitive UI built with React and a robust backend integration.",
+    categories: ["React", "Dashboard", "Management System", "Enterprise"],
+    link: "https://dayflow-final.netlify.app/",
+    githubLink: "https://github.com/MahirPatel2005/HRMS",
+  },
+  slug: "hrms",
+  beforeAfter: {
+    heroBefore: hrmsHero,
+    heroBeforeMobile: hrmsHero,
+    beforeAltText: "HRMS Dashboard",
+    beforeMobileAltText: "HRMS Mobile",
+    afterAltText: "HRMS Overview",
+  },
+  results: [
+    {
+      title: "Efficiency",
+      description: "Increase in HR tasks speed",
+      percentageIncrease: 200,
+      chart: <TrafficBarChart startValue={20} endValue={80} />,
+      dataSource: "Internal Testing",
+    },
+  ],
+  phases: [
+    {
+      id: 1,
+      title: "Dashboard Design",
+      subtitle: "Overview at a Glance",
+      description: "Designed a centralized dashboard that provides key metrics and alerts for HR managers instantly.",
+      details: ["Employee status tracking", "Attendance graphs", "Pending requests notifications"],
+      icon: "/assets/design-black.webp",
+      feature: <ApproachTabsImage src="/assets/iron-and-oak-website-tool.png" alt="Dashboard Design" />,
+    },
+    {
+      id: 2,
+      title: "Employee Management",
+      subtitle: "CRUD Operations",
+      description: "Implemented full CRUD capabilities for employee records, ensuring data integrity and easy updates.",
+      details: ["Add/Edit/Remove employees", "Role assignment", "Department tagging"],
+      icon: "/assets/tool-black.webp",
+      feature: (
+        <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-gray-100">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/QTGuS0R7qug?si=1fAai16Wi1Jv7ofL"
+            title="HRMS Demo Video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="absolute inset-0 h-full w-full"
+          />
+        </div>
+      ),
     },
   ],
 }

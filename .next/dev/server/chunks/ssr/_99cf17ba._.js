@@ -385,7 +385,8 @@ const SITE_SLUGS = {
     projectLinks: {
         automedics: "/projects/automedics",
         bespoke: "/projects/bespoke",
-        iao: "/projects/iron-and-oak"
+        iao: "/projects/iron-and-oak",
+        hrms: "/projects/hrms"
     }
 };
 const externalLinks = {

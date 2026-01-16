@@ -32,7 +32,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Icon$2e
 ;
 ;
 ;
-const ProjectHero = ({ title, client, year, description, categories, link })=>{
+const ProjectHero = ({ title, client, year, description, categories, link, githubLink })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "inside-container-large relative z-2 flex max-w-2xl flex-col gap-8",
         children: [
@@ -148,20 +148,50 @@ const ProjectHero = ({ title, client, year, description, categories, link })=>{
                 lineNumber: 25,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                href: link,
-                title: `View ${client} live site`,
-                target: "_blank",
-                className: "underline-hover flex w-fit items-center gap-1 text-lg text-nowrap text-black",
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex flex-wrap gap-4",
                 children: [
-                    "View Live Site",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Icon$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Icon"], {
-                        name: "arrow-right",
-                        className: "h-3 w-3"
-                    }, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                        href: link,
+                        title: `View ${client} live site`,
+                        target: "_blank",
+                        className: "underline-hover flex w-fit items-center gap-1 text-lg text-nowrap text-black",
+                        children: [
+                            "View Live Site",
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Icon$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Icon"], {
+                                name: "arrow-right",
+                                className: "h-3 w-3"
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/ProjectSection/ProjectHero.tsx",
+                                lineNumber: 43,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/app/components/ProjectSection/ProjectHero.tsx",
-                        lineNumber: 42,
+                        lineNumber: 36,
                         columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    githubLink && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                        href: githubLink,
+                        title: `View ${client} code`,
+                        target: "_blank",
+                        className: "underline-hover flex w-fit items-center gap-1 text-lg text-nowrap text-black",
+                        children: [
+                            "View Code",
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Icon$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Icon"], {
+                                name: "github",
+                                className: "h-3 w-3"
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/ProjectSection/ProjectHero.tsx",
+                                lineNumber: 53,
+                                columnNumber: 13
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/components/ProjectSection/ProjectHero.tsx",
+                        lineNumber: 46,
+                        columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
@@ -1051,8 +1081,8 @@ const STATIC_PROJECTS = [
         type: "API Discovery Platform",
         text: "View on GitHub",
         title: "APIHub",
-        href: "https://github.com/mahirpatel2005",
-        githubUrl: "https://github.com/mahirpatel2005",
+        href: "http://apihub-pi.vercel.app/",
+        githubUrl: "https://github.com/MahirPatel2005/0412",
         ariaLabel: "View APIHub on GitHub",
         isExternal: true
     },
@@ -1064,8 +1094,8 @@ const STATIC_PROJECTS = [
         type: "Web Game (Number Guessing)",
         text: "View on GitHub",
         title: "Numble",
-        href: "https://github.com/mahirpatel2005",
-        githubUrl: "https://github.com/mahirpatel2005",
+        href: "http://numble0412.netlify.app/",
+        githubUrl: "https://github.com/MahirPatel2005/0412",
         ariaLabel: "View Numble on GitHub",
         isExternal: true
     },
@@ -1077,9 +1107,22 @@ const STATIC_PROJECTS = [
         type: "UI Clone / Frontend",
         text: "View on GitHub",
         title: "Slippy Clone",
-        href: "https://github.com/mahirpatel2005",
-        githubUrl: "https://github.com/mahirpatel2005",
+        href: "https://slippy1.netlify.app",
+        githubUrl: "https://github.com/MahirPatel2005/slippy",
         ariaLabel: "View Slippy Clone on GitHub",
+        isExternal: true
+    },
+    {
+        id: "hrms",
+        src: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$images$2f$react$2d$zero$2d$ui$2d$preview$2e$jpg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$app$2f$images$2f$react$2d$zero$2d$ui$2d$preview$2e$jpg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$rsc$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
+        alt: "HRMS Preview",
+        color: "#FF5733",
+        type: "Dashboard / Management",
+        text: "View on GitHub",
+        title: "HRMS (Dayflow)",
+        href: "https://dayflow-final.netlify.app/",
+        githubUrl: "https://github.com/MahirPatel2005/HRMS",
+        ariaLabel: "View HRMS on GitHub",
         isExternal: true
     }
 ];
@@ -1102,28 +1145,28 @@ const ProjectsStatic = ()=>{
                             detailUrl: `${__TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SITE_SLUGS"].projects}/${project.id}`
                         }, void 0, false, {
                             fileName: "[project]/app/(site)/projects/ProjectsStatic.tsx",
-                            lineNumber: 77,
+                            lineNumber: 90,
                             columnNumber: 17
                         }, ("TURBOPACK compile-time value", void 0))
                     }, project.id, false, {
                         fileName: "[project]/app/(site)/projects/ProjectsStatic.tsx",
-                        lineNumber: 76,
+                        lineNumber: 89,
                         columnNumber: 15
                     }, ("TURBOPACK compile-time value", void 0));
                 })
             }, void 0, false, {
                 fileName: "[project]/app/(site)/projects/ProjectsStatic.tsx",
-                lineNumber: 73,
+                lineNumber: 86,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         }, void 0, false, {
             fileName: "[project]/app/(site)/projects/ProjectsStatic.tsx",
-            lineNumber: 72,
+            lineNumber: 85,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/app/(site)/projects/ProjectsStatic.tsx",
-        lineNumber: 71,
+        lineNumber: 84,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -2394,6 +2437,8 @@ __turbopack_context__.s([
     ()=>automedicsKirkland,
     "bespoke",
     ()=>bespoke,
+    "dayflow",
+    ()=>dayflow,
     "iao",
     ()=>iao,
     "numble",
@@ -2450,7 +2495,7 @@ const bespoke = {
                     children: "traffic increased by nearly 1,000%"
                 }, void 0, false, {
                     fileName: "[project]/app/data/project-data.tsx",
-                    lineNumber: 85,
+                    lineNumber: 86,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 "; the shop is booking an average of",
@@ -2460,7 +2505,7 @@ const bespoke = {
                     children: "3 new paying clients per day"
                 }, void 0, false, {
                     fileName: "[project]/app/data/project-data.tsx",
-                    lineNumber: 86,
+                    lineNumber: 87,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 "; and it's on track to surpass $1M in 2025 revenue."
@@ -2493,7 +2538,7 @@ const bespoke = {
                 endValue: 1450
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 106,
+                lineNumber: 107,
                 columnNumber: 14
             }, ("TURBOPACK compile-time value", void 0)),
             dataSource: "Based on 30 day traffic average"
@@ -2504,7 +2549,7 @@ const bespoke = {
             percentageIncrease: 45,
             chart: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ProjectSection$2f$RadialProgressRing$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["RadialProgressRing"], {}, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 113,
+                lineNumber: 114,
                 columnNumber: 14
             }, ("TURBOPACK compile-time value", void 0)),
             dataSource: "Measured over a 60 day period"
@@ -2515,7 +2560,7 @@ const bespoke = {
             percentageIncrease: 35,
             chart: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ProjectSection$2f$LineChart$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["LineChart"], {}, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 120,
+                lineNumber: 121,
                 columnNumber: 14
             }, ("TURBOPACK compile-time value", void 0)),
             dataSource: "Measured over a 90 day period"
@@ -2539,7 +2584,7 @@ const bespoke = {
                 alt: "Competitor Analysis"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 139,
+                lineNumber: 140,
                 columnNumber: 16
             }, ("TURBOPACK compile-time value", void 0))
         },
@@ -2570,7 +2615,7 @@ const bespoke = {
                         media: "(max-width: 450px)"
                     }, void 0, false, {
                         fileName: "[project]/app/data/project-data.tsx",
-                        lineNumber: 157,
+                        lineNumber: 158,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("source", {
@@ -2579,7 +2624,7 @@ const bespoke = {
                         media: "(max-width: 600px) and (min-width: 451px)"
                     }, void 0, false, {
                         fileName: "[project]/app/data/project-data.tsx",
-                        lineNumber: 158,
+                        lineNumber: 159,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("source", {
@@ -2588,7 +2633,7 @@ const bespoke = {
                         media: "(min-width: 601px) and (max-width: 1023px)"
                     }, void 0, false, {
                         fileName: "[project]/app/data/project-data.tsx",
-                        lineNumber: 159,
+                        lineNumber: 160,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("source", {
@@ -2597,14 +2642,14 @@ const bespoke = {
                         media: "(min-width: 1024px)"
                     }, void 0, false, {
                         fileName: "[project]/app/data/project-data.tsx",
-                        lineNumber: 160,
+                        lineNumber: 161,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     "Your browser does not support the video tag."
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 156,
+                lineNumber: 157,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         },
@@ -2626,7 +2671,7 @@ const bespoke = {
                 alt: "Competitor Analysis"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 179,
+                lineNumber: 180,
                 columnNumber: 16
             }, ("TURBOPACK compile-time value", void 0))
         },
@@ -2648,7 +2693,7 @@ const bespoke = {
                 alt: "Tint Law Article"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 195,
+                lineNumber: 196,
                 columnNumber: 16
             }, ("TURBOPACK compile-time value", void 0))
         },
@@ -2668,7 +2713,7 @@ const bespoke = {
                 className: "h-full w-full"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 209,
+                lineNumber: 210,
                 columnNumber: 16
             }, ("TURBOPACK compile-time value", void 0))
         }
@@ -2709,7 +2754,7 @@ const automedicsKirkland = {
                 endValue: 240
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 241,
+                lineNumber: 242,
                 columnNumber: 14
             }, ("TURBOPACK compile-time value", void 0)),
             dataSource: "Based on 30 day traffic average"
@@ -2722,7 +2767,7 @@ const automedicsKirkland = {
                 percentage: 85
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 248,
+                lineNumber: 249,
                 columnNumber: 14
             }, ("TURBOPACK compile-time value", void 0)),
             dataSource: "Measured over a 60 day period"
@@ -2733,7 +2778,7 @@ const automedicsKirkland = {
             percentageIncrease: 15,
             chart: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ProjectSection$2f$LineChart$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["LineChart"], {}, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 255,
+                lineNumber: 256,
                 columnNumber: 14
             }, ("TURBOPACK compile-time value", void 0)),
             dataSource: "Measured over a 90 day period"
@@ -2757,7 +2802,7 @@ const automedicsKirkland = {
                 alt: "AutoMedics Brand Identity"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 273,
+                lineNumber: 274,
                 columnNumber: 16
             }, ("TURBOPACK compile-time value", void 0))
         },
@@ -2777,7 +2822,7 @@ const automedicsKirkland = {
                 alt: "Performance Metrics"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 287,
+                lineNumber: 288,
                 columnNumber: 16
             }, ("TURBOPACK compile-time value", void 0))
         },
@@ -2797,7 +2842,7 @@ const automedicsKirkland = {
                 alt: "AutoMedics Visual Assets"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 301,
+                lineNumber: 302,
                 columnNumber: 16
             }, ("TURBOPACK compile-time value", void 0))
         },
@@ -2818,7 +2863,7 @@ const automedicsKirkland = {
                 alt: "Review Showcase"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 315,
+                lineNumber: 316,
                 columnNumber: 16
             }, ("TURBOPACK compile-time value", void 0))
         }
@@ -2833,7 +2878,7 @@ const iao = {
                 "Telling the Story ",
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                     fileName: "[project]/app/data/project-data.tsx",
-                    lineNumber: 326,
+                    lineNumber: 327,
                     columnNumber: 27
                 }, ("TURBOPACK compile-time value", void 0)),
                 " of Iron & Oak"
@@ -2869,7 +2914,7 @@ const iao = {
                 endValue: 410
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 350,
+                lineNumber: 351,
                 columnNumber: 14
             }, ("TURBOPACK compile-time value", void 0)),
             dataSource: "Based on 30 day traffic average"
@@ -2882,7 +2927,7 @@ const iao = {
                 percentage: 290
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 357,
+                lineNumber: 358,
                 columnNumber: 14
             }, ("TURBOPACK compile-time value", void 0)),
             dataSource: "Measured over a 60 day period"
@@ -2893,7 +2938,7 @@ const iao = {
             percentageIncrease: 65,
             chart: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ProjectSection$2f$LineChart$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["LineChart"], {}, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 364,
+                lineNumber: 365,
                 columnNumber: 14
             }, ("TURBOPACK compile-time value", void 0)),
             dataSource: "Measured over a 30 day period"
@@ -2916,7 +2961,7 @@ const iao = {
                 alt: "Iron & Oak Brand Identity"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 381,
+                lineNumber: 382,
                 columnNumber: 16
             }, ("TURBOPACK compile-time value", void 0))
         },
@@ -2936,7 +2981,7 @@ const iao = {
                 className: "bg-slate-800 px-2.5"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 390,
+                lineNumber: 391,
                 columnNumber: 16
             }, ("TURBOPACK compile-time value", void 0))
         },
@@ -2958,7 +3003,7 @@ const iao = {
                 className: "bg-slate-200 px-2.5"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 405,
+                lineNumber: 406,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         },
@@ -2978,7 +3023,7 @@ const iao = {
                 alt: "Iron & Oak Content Cluster SEO"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 419,
+                lineNumber: 420,
                 columnNumber: 16
             }, ("TURBOPACK compile-time value", void 0))
         },
@@ -2999,7 +3044,7 @@ const iao = {
                 alt: "Iron & Oak Applicant Portal"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 433,
+                lineNumber: 434,
                 columnNumber: 16
             }, ("TURBOPACK compile-time value", void 0))
         }
@@ -3019,7 +3064,8 @@ const apihub = {
             "API Integration",
             "Platform"
         ],
-        link: "https://github.com/mahirpatel2005"
+        link: "http://apihub-pi.vercel.app/",
+        githubLink: "https://github.com/MahirPatel2005/0412"
     },
     slug: "apihub",
     beforeAfter: {
@@ -3039,7 +3085,7 @@ const apihub = {
                 endValue: 50
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 465,
+                lineNumber: 467,
                 columnNumber: 14
             }, ("TURBOPACK compile-time value", void 0)),
             dataSource: "Integrated Providers"
@@ -3052,7 +3098,7 @@ const apihub = {
                 percentage: 80
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 472,
+                lineNumber: 474,
                 columnNumber: 14
             }, ("TURBOPACK compile-time value", void 0)),
             dataSource: "User Testing Benchmark"
@@ -3075,7 +3121,7 @@ const apihub = {
                 alt: "API Architecture"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 484,
+                lineNumber: 486,
                 columnNumber: 16
             }, ("TURBOPACK compile-time value", void 0))
         },
@@ -3096,7 +3142,7 @@ const apihub = {
                 className: "bg-slate-800 px-2.5"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 494,
+                lineNumber: 496,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         }
@@ -3121,7 +3167,8 @@ const numble = {
             "Logic",
             "Web App"
         ],
-        link: "https://github.com/mahirpatel2005"
+        link: "http://numble0412.netlify.app/",
+        githubLink: "https://github.com/MahirPatel2005/0412"
     },
     slug: "numble",
     beforeAfter: {
@@ -3138,7 +3185,7 @@ const numble = {
             percentageIncrease: 100,
             chart: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ProjectSection$2f$LineChart$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["LineChart"], {}, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 534,
+                lineNumber: 537,
                 columnNumber: 14
             }, ("TURBOPACK compile-time value", void 0)),
             dataSource: "Analytics Data"
@@ -3161,7 +3208,7 @@ const numble = {
                 alt: "Game Logic"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 546,
+                lineNumber: 549,
                 columnNumber: 16
             }, ("TURBOPACK compile-time value", void 0))
         },
@@ -3181,7 +3228,7 @@ const numble = {
                 alt: "Optimization"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 555,
+                lineNumber: 558,
                 columnNumber: 16
             }, ("TURBOPACK compile-time value", void 0))
         }
@@ -3206,7 +3253,8 @@ const slippyClone = {
             "CSS Animations",
             "React"
         ],
-        link: "https://github.com/mahirpatel2005"
+        link: "https://slippy1.netlify.app",
+        githubLink: "https://github.com/MahirPatel2005/slippy"
     },
     slug: "slippy-clone",
     beforeAfter: {
@@ -3225,7 +3273,7 @@ const slippyClone = {
                 percentage: 99
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 590,
+                lineNumber: 594,
                 columnNumber: 14
             }, ("TURBOPACK compile-time value", void 0)),
             dataSource: "Pixel Matching"
@@ -3248,7 +3296,7 @@ const slippyClone = {
                 alt: "Component Analysis"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 602,
+                lineNumber: 606,
                 columnNumber: 16
             }, ("TURBOPACK compile-time value", void 0))
         },
@@ -3268,8 +3316,104 @@ const slippyClone = {
                 alt: "Animation Details"
             }, void 0, false, {
                 fileName: "[project]/app/data/project-data.tsx",
-                lineNumber: 611,
+                lineNumber: 615,
                 columnNumber: 16
+            }, ("TURBOPACK compile-time value", void 0))
+        }
+    ]
+};
+const dayflow = {
+    projectImage: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$assets$2f$iron$2d$and$2d$oak$2d$website$2d$tool$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$assets$2f$iron$2d$and$2d$oak$2d$website$2d$tool$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$rsc$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
+    hero: {
+        title: "HRMS: Human Resource Management System",
+        client: "Dayflow",
+        year: "2025",
+        description: "A comprehensive HRMS dashboard for managing employee records, attendance, and payroll. Features a modern, intuitive UI built with React and a robust backend integration.",
+        categories: [
+            "React",
+            "Dashboard",
+            "Management System",
+            "Enterprise"
+        ],
+        link: "https://dayflow-final.netlify.app/",
+        githubLink: "https://github.com/MahirPatel2005/HRMS"
+    },
+    slug: "hrms",
+    beforeAfter: {
+        heroBefore: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$assets$2f$iron$2d$and$2d$oak$2d$before$2d$website$2d$design$2e$jpg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$assets$2f$iron$2d$and$2d$oak$2d$before$2d$website$2d$design$2e$jpg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$rsc$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
+        heroBeforeMobile: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$assets$2f$iron$2d$and$2d$oak$2d$before$2d$website$2d$design$2d$mobile$2e$jpg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$assets$2f$iron$2d$and$2d$oak$2d$before$2d$website$2d$design$2d$mobile$2e$jpg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$rsc$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
+        beforeAltText: "HRMS Dashboard",
+        beforeMobileAltText: "HRMS Mobile",
+        afterAltText: "HRMS Overview"
+    },
+    results: [
+        {
+            title: "Efficiency",
+            description: "Increase in HR tasks speed",
+            percentageIncrease: 200,
+            chart: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ProjectSection$2f$TrafficBarChart$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["TrafficBarChart"], {
+                startValue: 20,
+                endValue: 80
+            }, void 0, false, {
+                fileName: "[project]/app/data/project-data.tsx",
+                lineNumber: 645,
+                columnNumber: 14
+            }, ("TURBOPACK compile-time value", void 0)),
+            dataSource: "Internal Testing"
+        }
+    ],
+    phases: [
+        {
+            id: 1,
+            title: "Dashboard Design",
+            subtitle: "Overview at a Glance",
+            description: "Designed a centralized dashboard that provides key metrics and alerts for HR managers instantly.",
+            details: [
+                "Employee status tracking",
+                "Attendance graphs",
+                "Pending requests notifications"
+            ],
+            icon: "/assets/design-black.webp",
+            feature: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ProjectSection$2f$ApproachTabsImage$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ApproachTabsImage"], {
+                src: "/assets/iron-and-oak-website-tool.png",
+                alt: "Dashboard Design"
+            }, void 0, false, {
+                fileName: "[project]/app/data/project-data.tsx",
+                lineNumber: 657,
+                columnNumber: 16
+            }, ("TURBOPACK compile-time value", void 0))
+        },
+        {
+            id: 2,
+            title: "Employee Management",
+            subtitle: "CRUD Operations",
+            description: "Implemented full CRUD capabilities for employee records, ensuring data integrity and easy updates.",
+            details: [
+                "Add/Edit/Remove employees",
+                "Role assignment",
+                "Department tagging"
+            ],
+            icon: "/assets/tool-black.webp",
+            feature: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "relative aspect-video w-full overflow-hidden rounded-xl bg-gray-100",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
+                    width: "100%",
+                    height: "100%",
+                    src: "https://www.youtube.com/embed/QTGuS0R7qug?si=1fAai16Wi1Jv7ofL",
+                    title: "HRMS Demo Video",
+                    frameBorder: "0",
+                    allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+                    allowFullScreen: true,
+                    className: "absolute inset-0 h-full w-full"
+                }, void 0, false, {
+                    fileName: "[project]/app/data/project-data.tsx",
+                    lineNumber: 668,
+                    columnNumber: 11
+                }, ("TURBOPACK compile-time value", void 0))
+            }, void 0, false, {
+                fileName: "[project]/app/data/project-data.tsx",
+                lineNumber: 667,
+                columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         }
     ]
@@ -3302,7 +3446,8 @@ const projectsMap = {
     [__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$data$2f$project$2d$data$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["iao"].slug]: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$data$2f$project$2d$data$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["iao"],
     [__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$data$2f$project$2d$data$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["apihub"].slug]: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$data$2f$project$2d$data$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["apihub"],
     [__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$data$2f$project$2d$data$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["numble"].slug]: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$data$2f$project$2d$data$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["numble"],
-    [__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$data$2f$project$2d$data$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["slippyClone"].slug]: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$data$2f$project$2d$data$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["slippyClone"]
+    [__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$data$2f$project$2d$data$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["slippyClone"].slug]: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$data$2f$project$2d$data$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["slippyClone"],
+    [__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$data$2f$project$2d$data$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["dayflow"].slug]: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$data$2f$project$2d$data$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["dayflow"]
 };
 async function generateStaticParams() {
     return Object.keys(projectsMap).map((slug)=>({
@@ -3338,7 +3483,7 @@ async function ProjectPage({ params }) {
         projectData: project
     }, void 0, false, {
         fileName: "[project]/app/(site)/projects/[slug]/page.tsx",
-        lineNumber: 67,
+        lineNumber: 69,
         columnNumber: 12
     }, this);
 }

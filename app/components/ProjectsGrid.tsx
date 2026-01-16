@@ -3,6 +3,10 @@ import { AnimatedCard, HeroOffset } from "./ProjectCard/AnimatedCard"
 import iaoPreview from "@/app/images/iao-preview-v2.webp"
 import bespokePreview from "@/app/images/bespoke-preview-v2.webp"
 import reactZeroUIPreview from "@/app/images/react-zero-ui-preview.jpg"
+import apiHubScreenshot from "@/public/assets/apihub-screenshot.png"
+import numbleScreenshot from "@/public/assets/numble-screenshot.png"
+import slippyScreenshot from "@/public/assets/slippy-screenshot.png"
+import hrmsScreenshot from "@/public/assets/hrms-screenshot.png"
 import clsx from "clsx"
 import { useOffset } from "../hooks/useOffset"
 import { useIsMobile } from "../hooks/useMediaQuery"
@@ -11,7 +15,7 @@ import { useScroll, useSpring } from "motion/react"
 import { useUI } from "@react-zero-ui/core"
 import { externalLinks } from "@/config/siteConfig"
 
-const ids = ["apihub", "numble", "slippy-clone"]
+const ids = ["apihub", "numble", "slippy-clone", "hrms"]
 
 export function ProjectsGrid({ className }: { className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -33,6 +37,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
     apihub: { rot: 9, s: responsiveScale, dx: isMobile ? -220 : -30, dy: isMobile ? -120 : -40 },
     numble: { rot: -5, s: responsiveScale, dx: isMobile ? -230 : -60, dy: isMobile ? -130 : -40 },
     "slippy-clone": { rot: 5, s: responsiveScale, dx: isMobile ? -225 : -45, dy: isMobile ? -130 : -25 },
+    hrms: { rot: -3, s: responsiveScale, dx: isMobile ? -220 : -50, dy: isMobile ? -110 : -35 },
   }
 
   const offsets = Object.fromEntries(
@@ -68,43 +73,57 @@ export function ProjectsGrid({ className }: { className?: string }) {
       <div className="relative z-4 grid grid-cols-1 grid-rows-1 gap-4 md:grid-cols-2 md:grid-rows-2">
         <AnimatedCard
           key={"apihub"}
-          src={reactZeroUIPreview}
+          src={apiHubScreenshot}
           alt={"APIHub Preview"}
           offset={offsets["apihub"]}
           gridId="apihub"
           color="#3B06D1"
           type="API Discovery Platform"
           progress={progress}
-          href="https://github.com/mahirpatel2005"
-          githubUrl="https://github.com/mahirpatel2005"
+          href="http://apihub-pi.vercel.app/"
+          githubUrl="https://github.com/MahirPatel2005/0412"
           title="APIHub"
         />
         <AnimatedCard
           key="numble"
-          src={bespokePreview}
+          src={numbleScreenshot}
           alt={"Numble Preview"}
           offset={offsets["numble"]}
           gridId="numble"
           color="#024EFC"
           type="Web Game (Number Guessing)"
           progress={progress}
-          href="https://github.com/mahirpatel2005"
-          githubUrl="https://github.com/mahirpatel2005"
+          href="http://numble0412.netlify.app/"
+          githubUrl="https://github.com/MahirPatel2005/0412"
           title="Numble"
         />
 
         <AnimatedCard
           key="slippy-clone"
-          src={iaoPreview}
+          src={slippyScreenshot}
           alt={"Slippy Clone Preview"}
           offset={offsets["slippy-clone"]}
           gridId="slippy-clone"
           color="#13739C"
           type="UI Clone / Frontend"
           progress={progress}
-          href="https://github.com/mahirpatel2005"
-          githubUrl="https://github.com/mahirpatel2005"
+          href="https://slippy1.netlify.app"
+          githubUrl="https://github.com/MahirPatel2005/slippy"
           title="Slippy Clone"
+        />
+
+        <AnimatedCard
+          key="hrms"
+          src={hrmsScreenshot}
+          alt={"HRMS Preview"}
+          offset={offsets["hrms"]}
+          gridId="hrms"
+          color="#FF5733"
+          type="Dashboard / Management"
+          progress={progress}
+          href="https://dayflow-final.netlify.app/"
+          githubUrl="https://github.com/MahirPatel2005/HRMS"
+          title="HRMS"
         />
       </div>
     </section>
