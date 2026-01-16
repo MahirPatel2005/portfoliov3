@@ -67,7 +67,7 @@ export type ProjectData = {
   }
   results: AnalyticCardProps[]
   phases: Phase[]
-  review: ReviewProps
+  review?: ReviewProps
   slug: string
   projectImage?: StaticImageData | string
 }
