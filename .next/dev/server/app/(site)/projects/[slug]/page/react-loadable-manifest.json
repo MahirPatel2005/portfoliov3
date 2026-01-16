@@ -1,0 +1,30 @@
+{
+  "[project]/app/ui/TiltedWrapper.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/app/ui/TiltedWrapper.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/_36503889._.js",
+      "static/chunks/app_ui_TiltedWrapper_tsx_e31032f7._.js"
+    ]
+  },
+  "[project]/app/components/SplashCursor.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/app/components/SplashCursor.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/app_components_SplashCursor_tsx_d79ee0f2._.js",
+      "static/chunks/app_components_SplashCursor_tsx_e31032f7._.js"
+    ]
+  },
+  "[project]/app/components/DotCursor.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/app/components/DotCursor.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/_d650878f._.js",
+      "static/chunks/app_components_DotCursor_tsx_e31032f7._.js"
+    ]
+  },
+  "[project]/app/components/Carousel/CarouselButtons.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/app/components/Carousel/CarouselButtons.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/_1133b212._.js",
+      "static/chunks/app_components_Carousel_CarouselButtons_tsx_24ce3d02._.js"
+    ]
+  }
+}

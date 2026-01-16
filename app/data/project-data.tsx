@@ -12,6 +12,10 @@ import { LineChart } from "../components/ProjectSection/LineChart"
 import { REVIEW_MAP, type ReviewProps } from "./review-data"
 import heroBeforeIao from "@/public/assets/iron-and-oak-before-website-design.jpg"
 import heroBeforeMobileIao from "@/public/assets/iron-and-oak-before-website-design-mobile.jpg"
+import heroAfterIao from "@/public/assets/iron-and-oak-after-website-design.png"
+import apiHubHero from "@/public/assets/iron-and-oak-website-tool.png"
+import numbleHero from "@/public/assets/iron-and-oak-media-coverage-website-research.png"
+import slippyHero from "@/public/assets/iron-and-oak-job-application-portal-web-design.png"
 import { ApproachTabsImage } from "../components/ProjectSection/ApproachTabsImage"
 
 //   interface ProjectData {
@@ -69,6 +73,7 @@ export type ProjectData = {
 }
 
 export const bespoke: ProjectData = {
+  projectImage: heroBefore,
   hero: {
     title: "Growing Bespoke Tint & PPF to $1m+ in Revenue",
     client: "Bespoke Tint & PPF",
@@ -208,6 +213,7 @@ export const bespoke: ProjectData = {
 }
 
 export const automedicsKirkland: ProjectData = {
+  projectImage: heroBeforeAutomedics,
   hero: {
     title: "Transforming Automedics Kirkland's Online Presence",
     client: "Automedics Kirkland",
@@ -313,6 +319,7 @@ export const automedicsKirkland: ProjectData = {
 }
 
 export const iao: ProjectData = {
+  projectImage: heroAfterIao,
   hero: {
     title: (
       <>
@@ -432,82 +439,176 @@ export const iao: ProjectData = {
 // --- NEW PROJECTS ---
 
 export const apihub: ProjectData = {
+  projectImage: apiHubHero,
   hero: {
-    title: "APIHub: Discover & Document APIs",
+    title: "APIHub: Centralized API Discovery & Documentation",
     client: "Personal Project",
     year: "2025",
-    description: "A comprehensive API discovery platform.",
-    categories: ["React", "API", "Platform"],
+    description:
+      "I built APIHub to solve the fragmentation problem in API discovery. It's a centralized platform that aggregates public APIs, offering powerful search, categorization, and standardized documentation views. The goal was to reduce the time developers spend hunting for endpoints.",
+    categories: ["React", "Next.js", "API Integration", "Platform"],
     link: "https://github.com/mahirpatel2005",
   },
   slug: "apihub",
-  beforeAfter: { // Placeholder for now
+  beforeAfter: {
     heroBefore: heroBeforeIao,
     heroBeforeMobile: heroBeforeMobileIao,
-    beforeAltText: "APIHub Before",
+    beforeAltText: "APIHub Interface",
     beforeMobileAltText: "APIHub Mobile",
-    afterAltText: "APIHub After",
+    afterAltText: "APIHub Dashboard",
   },
-  results: [],
-  phases: [],
-  review: { // Minimal placeholder
-    quote: "Showcasing API capabilities efficiently.",
-    name: "User",
-    title: "Developer",
-    img: heroBeforeIao // Placeholder
-  }
+  results: [
+    {
+      title: "API Sources",
+      description: "Aggregated public API sources",
+      percentageIncrease: 150,
+      chart: <TrafficBarChart startValue={10} endValue={50} />,
+      dataSource: "Integrated Providers",
+    },
+    {
+      title: "Search Speed",
+      description: "improvement in endpoint discovery",
+      percentageIncrease: 300,
+      chart: <RadialProgressRing percentage={80} />,
+      dataSource: "User Testing Benchmark",
+    },
+  ],
+  phases: [
+    {
+      id: 1,
+      title: "Architecture",
+      subtitle: "Scalable Data Aggregation",
+      description: "Designed a flexible schema to normalize data from various openAPI specs and public registries into a unified format.",
+      details: ["Unified data model for diverse APIs", "Efficient search indexing", "Scalable backend architecture"],
+      icon: "/assets/design-black.webp",
+      feature: <ApproachTabsImage src="/assets/iron-and-oak-website-tool.png" alt="API Architecture" />,
+    },
+    {
+      id: 2,
+      title: "UI/UX Design",
+      subtitle: "Developer-First Experience",
+      description: "Created a clean, documentation-focused interface that prioritizes readability and quick access to endpoint details.",
+      details: ["Dark mode support", "One-click copy snippets", "Interactive playground"],
+      icon: "/assets/tool-black.webp",
+      feature: (
+        <ApproachTabsImage
+          src="/assets/iron-and-oak-website-tool.png"
+          alt="Developer UI"
+          className="bg-slate-800 px-2.5"
+        />
+      ),
+    },
+  ],
+  review: {
+    quote: "A game changer for finding the right API for my hackathon projects quickly.",
+    name: "Beta Tester",
+    title: "Full Stack Dev",
+    img: apiHubHero,
+  },
 }
 
 export const numble: ProjectData = {
+  projectImage: numbleHero,
   hero: {
-    title: "Numble: Number Guessing Game",
+    title: "Numble: The Viral Number Guessing Game",
     client: "Personal Project",
     year: "2025",
-    description: "An engaging number guessing game built with web technologies.",
-    categories: ["Game", "Web App"],
+    description:
+      "Inspired by Wordle, Numble challenges players to guess a daily math equation. Built with React and TypeScript, it features complex state management for game logic, local storage for streaks, and a responsive design for mobile play.",
+    categories: ["React", "Game Development", "Logic", "Web App"],
     link: "https://github.com/mahirpatel2005",
   },
   slug: "numble",
   beforeAfter: {
     heroBefore: heroBeforeIao,
     heroBeforeMobile: heroBeforeMobileIao,
-    beforeAltText: "Numble Before",
+    beforeAltText: "Numble Game Board",
     beforeMobileAltText: "Numble Mobile",
-    afterAltText: "Numble After",
+    afterAltText: "Numble Win Screen",
   },
-  results: [],
-  phases: [],
+  results: [
+    {
+      title: "Daily Players",
+      description: "Active daily user retention",
+      percentageIncrease: 100,
+      chart: <LineChart />,
+      dataSource: "Analytics Data",
+    },
+  ],
+  phases: [
+    {
+      id: 1,
+      title: "Game Logic",
+      subtitle: "Complex Equation Validation",
+      description: "Implemented a robust validation engine that handles order of operations (BODMAS) and instant feedback on valid equations.",
+      details: ["Regex based input validation", "Custom equations solver", "Keyboard event handling"],
+      icon: "/assets/tool-black.webp",
+      feature: <ApproachTabsImage src="/assets/iron-and-oak-media-coverage-website-research.png" alt="Game Logic" />,
+    },
+    {
+      id: 2,
+      title: "Optimization",
+      subtitle: "Performance & State",
+      description: "Optimized re-renders to ensure smooth animations on mobile devices even during complex state updates.",
+      details: ["React.memo for grid cells", "CSS transform animations", "Local storage persistence"],
+      icon: "/assets/design-black.webp",
+      feature: <ApproachTabsImage src="/assets/iron-and-oak-media-coverage-website-research.png" alt="Optimization" />,
+    },
+  ],
   review: {
-    quote: "A fun and interactive game.",
-    name: "Player",
-    title: "Gamer",
-    img: heroBeforeIao
-  }
+    quote: "It's addictive! The math twist makes it so much more challenging than word games.",
+    name: "JOEL.",
+    title: "CEO Korsaq",
+    img: numbleHero,
+  },
 }
 
 export const slippyClone: ProjectData = {
+  projectImage: slippyHero,
   hero: {
-    title: "Slippy Clone: UI Recreation",
+    title: "Slippy Clone: Pixel-Perfect UI Recreation",
     client: "Personal Project",
     year: "2025",
-    description: "A faithful recreation of the Slippy UI, demonstrating frontend precision.",
-    categories: ["UI Clone", "Frontend"],
+    description:
+      "A frontend engineering challenge to recreate the complex, fluid interactions of the 'Slippy' interface. This project demonstrates high-fidelity attention to detail, advanced CSS animations, and faithful component composition.",
+    categories: ["UI Clone", "Frontend", "CSS Animations", "React"],
     link: "https://github.com/mahirpatel2005",
   },
   slug: "slippy-clone",
   beforeAfter: {
     heroBefore: heroBeforeIao,
     heroBeforeMobile: heroBeforeMobileIao,
-    beforeAltText: "Slippy Clone Before",
-    beforeMobileAltText: "Slippy Clone Mobile",
-    afterAltText: "Slippy Clone After",
+    beforeAltText: "Slippy Original",
+    beforeMobileAltText: "Slippy Mobile",
+    afterAltText: "Slippy Clone",
   },
-  results: [],
-  phases: [],
-  review: {
-    quote: "Pixel perfect recreation.",
-    name: "Designer",
-    title: "UI/UX",
-    img: heroBeforeIao
-  }
+  results: [
+    {
+      title: "Visual Accuracy",
+      description: "Match to original design",
+      percentageIncrease: 99,
+      chart: <RadialProgressRing percentage={99} />,
+      dataSource: "Pixel Matching",
+    },
+  ],
+  phases: [
+    {
+      id: 1,
+      title: "Component Analysis",
+      subtitle: "Atomic Design Breakdown",
+      description: "Deconstructed the original interface into reusable atomic components to manage complexity.",
+      details: ["Atomic design methodology", "Shared state management", "Reusable UI primitives"],
+      icon: "/assets/search-black.webp",
+      feature: <ApproachTabsImage src="/assets/iron-and-oak-job-application-portal-web-design.png" alt="Component Analysis" />,
+    },
+    {
+      id: 2,
+      title: "Animations",
+      subtitle: "Fluid Micro-Interactions",
+      description: "Replicated the subtle bounce, hover, and transition effects that give the original app its premium feel.",
+      details: ["Framer Motion integration", "CSS keyframes", "Gesture handling"],
+      icon: "/assets/assets-black-camera.webp",
+      feature: <ApproachTabsImage src="/assets/iron-and-oak-job-application-portal-web-design.png" alt="Animation Details" />,
+    },
+  ],
 }

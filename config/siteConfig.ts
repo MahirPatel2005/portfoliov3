@@ -26,13 +26,11 @@ export const SITE_NAP = {
   openingHours: [{ days: "Mon - Sat", hours: "9am - 6pm" }] as const,
   googleReviewLink: "",
   profiles: {
-    facebook: "",
     linkedIn: "https://linkedin.com/in/mahir-r-patel",
     yelp: "",
     pinterest: "",
     gbp: "",
     github: "https://github.com/mahirpatel2005",
-    x: "",
   } as const,
   logo: "/serbyte-logo.png",
   favicon: "/favicon.ico",

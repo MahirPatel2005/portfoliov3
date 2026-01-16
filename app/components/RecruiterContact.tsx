@@ -56,6 +56,10 @@ export const RecruiterContact: React.FC = () => {
               <Icon name="github" height={18} width={18} className="h-[18px] w-[18px]" />
               GitHub
             </WhiteButtonLink>
+            <WhiteButtonLink href="/resume.pdf" download>
+              <Icon name="page" height={18} width={18} className="h-[18px] w-[18px]" />
+              Download Resume
+            </WhiteButtonLink>
           </div>
 
           {/* <div className="flex items-center gap-3 opacity-70 max-lg:justify-center  ">

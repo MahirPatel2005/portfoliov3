@@ -1,0 +1,17 @@
+[00:00:00.814] Server  LOG      ✓ Ready in 555ms
+[00:00:28.516] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[00:00:28.516] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[00:02:38.244] Server  LOG      ✓ Compiled in 820ms
+[00:02:39.441] Server  LOG      ✓ Compiled in 717ms
+[00:02:44.230] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[00:02:44.230] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[00:04:13.826] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `ForwardRef(motion.div)`.  It was passed a child from Socials.
+[00:04:13.826] Browser ERROR   uncaughtError: Error: Failed prop type: The prop `href` expects a `string` or `object` in `<Link>`, but got `undefined` instead.
+Open your browser's console to view the Component stack trace.
+[00:07:42.940] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/projects/slippy-clone. Falling back to browser navigation. {}
+[00:09:59.352] Server  LOG      ✓ Compiled in 771ms
+[00:10:01.346] Server  LOG      ✓ Compiled in 692ms
+[00:13:48.896] Server  LOG      ✓ Compiled in 661ms
+[00:14:39.075] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior

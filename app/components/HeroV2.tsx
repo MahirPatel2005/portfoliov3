@@ -2,6 +2,8 @@ import { HeroScrollClick } from "./HeroScrollClick"
 import { ActivityDot } from "./ui/ActivityDot"
 import { AnimatedElement } from "./ui/AnimatedElement"
 import { CallToActionButton } from "./ui/CallToActionButton"
+import { WhiteButtonLink } from "./ui/WhiteButtonLink"
+import { Icon } from "./Icon"
 
 export const HeroV2 = () => {
   return (
@@ -33,7 +35,28 @@ export const HeroV2 = () => {
             Passionate about building scalable web applications and solving complex problems.
           </AnimatedElement>
 
-          <CallToActionButton />
+          <div className="flex flex-wrap items-center gap-4">
+            <CallToActionButton />
+            <AnimatedElement
+              element="div"
+              delay={0.7}
+              className="z-2"
+              variants={{
+                hidden: { opacity: 0, scale: 0.8, filter: "blur(5px)" },
+                visible: {
+                  opacity: 1,
+                  scale: 1,
+                  filter: "blur(0px)",
+                  transition: { delay: 0.7, duration: 0.5 },
+                },
+              }}
+            >
+              <WhiteButtonLink href="/resume.pdf" download className="h-[48px] px-6 shadow-xl shadow-black/5 hover:shadow-none">
+                <Icon name="page" height={18} width={18} className="h-[18px] w-[18px]" />
+                Download Resume
+              </WhiteButtonLink>
+            </AnimatedElement>
+          </div>
         </div>
         {/* Don't remove this span */}
         <span data-stack-target-id className="xs:ml-[8%] [flex:1 _0_0px] xs:mt-20 mt-24 ml-[4%] h-1 w-2 sm:mt-11 xl:ml-[16%]" />

@@ -1,5 +1,5 @@
 import { ProjectHero } from "./ProjectHero"
-import { BeforeAfterSection } from "./BeforeAfterSection"
+
 import { ResultsSection } from "./ResultsSection"
 import { ApproachSection } from "./ApproachSection"
 import { LargeReview } from "../LargeReview"
@@ -21,7 +21,7 @@ const ProjectDisplay: React.FC<{ projectData: ProjectData }> = ({ projectData })
         }}
       />
       <ProjectHero {...projectData.hero} />
-      {projectData.projectImage ? (
+      {projectData.projectImage && (
         <section className="inside-container-large mt-12 mb-20 lg:mb-32">
           <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-gray-100">
             <Image
@@ -34,18 +34,6 @@ const ProjectDisplay: React.FC<{ projectData: ProjectData }> = ({ projectData })
             />
           </div>
         </section>
-      ) : (
-        projectData.beforeAfter && (
-          <BeforeAfterSection
-            heroBefore={projectData.beforeAfter.heroBefore}
-            heroBeforeMobile={projectData.beforeAfter.heroBeforeMobile}
-            iframe={projectData.beforeAfter.iframe}
-            heroAfter={projectData.beforeAfter.heroAfter}
-            beforeAltText={projectData.beforeAfter.beforeAltText}
-            beforeMobileAltText={projectData.beforeAfter.beforeMobileAltText}
-            afterAltText={projectData.beforeAfter.afterAltText}
-          />
-        )
       )}
       {projectData.results && projectData.results.length > 0 && <ResultsSection analyticCards={projectData.results} />}
       {projectData.phases && projectData.phases.length > 0 && <ApproachSection phases={projectData.phases} />}
