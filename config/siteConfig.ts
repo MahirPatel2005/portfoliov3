@@ -44,7 +44,11 @@ export const SITE_SLUGS = {
   projects: "/projects",
   contact: "/#contact",
   about: "/#about",
-  projectLinks: {},
+  projectLinks: {
+    automedics: "/projects/automedics",
+    bespoke: "/projects/bespoke",
+    iao: "/projects/iron-and-oak",
+  },
 } as const
 
 export const externalLinks = {

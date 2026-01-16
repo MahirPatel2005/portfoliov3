@@ -1,0 +1,15 @@
+{
+  "/(site)/page": "app/(site)/page.js",
+  "/(site)/projects/[slug]/page": "app/(site)/projects/[slug]/page.js",
+  "/(site)/projects/automedics/page": "app/(site)/projects/automedics/page.js",
+  "/(site)/projects/bespoke/page": "app/(site)/projects/bespoke/page.js",
+  "/(site)/projects/iron-and-oak/page": "app/(site)/projects/iron-and-oak/page.js",
+  "/(site)/projects/page": "app/(site)/projects/page.js",
+  "/(site)/serbyte-dev-credit/page": "app/(site)/serbyte-dev-credit/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/opengraph-image.jpg/route": "app/opengraph-image.jpg/route.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js"
+}

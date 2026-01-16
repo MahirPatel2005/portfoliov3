@@ -65,6 +65,7 @@ export type ProjectData = {
   phases: Phase[]
   review: ReviewProps
   slug: string
+  projectImage?: StaticImageData | string
 }
 
 export const bespoke: ProjectData = {
@@ -311,7 +312,7 @@ export const automedicsKirkland: ProjectData = {
   review: REVIEW_MAP.automedics,
 }
 
-export const iaos: ProjectData = {
+export const iao: ProjectData = {
   hero: {
     title: (
       <>

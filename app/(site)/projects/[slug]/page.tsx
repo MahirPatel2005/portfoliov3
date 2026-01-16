@@ -2,7 +2,7 @@ import ProjectDisplay from "@/app/components/ProjectSection/ProjectDisplay"
 import {
     bespoke,
     automedicsKirkland,
-    iaos,
+    iao,
     apihub,
     numble,
     slippyClone,
@@ -15,7 +15,7 @@ import { Metadata } from "next"
 const projectsMap: Record<string, ProjectData> = {
     [bespoke.slug]: bespoke,
     [automedicsKirkland.slug]: automedicsKirkland,
-    [iaos.slug]: iaos,
+    [iao.slug]: iao,
     [apihub.slug]: apihub,
     [numble.slug]: numble,
     [slippyClone.slug]: slippyClone,
