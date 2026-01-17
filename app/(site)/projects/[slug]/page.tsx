@@ -1,8 +1,5 @@
 import ProjectDisplay from "@/app/components/ProjectSection/ProjectDisplay"
 import {
-    bespoke,
-    automedicsKirkland,
-    iao,
     apihub,
     numble,
     slippyClone,
@@ -11,12 +8,11 @@ import {
 } from "@/app/data/project-data"
 import { notFound } from "next/navigation"
 import { Metadata } from "next"
+import { buildProjectGraphMinimal } from "@/config/schemas"
+import Script from "next/script"
 
 // Map slugs to project data
 const projectsMap: Record<string, ProjectData> = {
-    [bespoke.slug]: bespoke,
-    [automedicsKirkland.slug]: automedicsKirkland,
-    [iao.slug]: iao,
     [apihub.slug]: apihub,
     [numble.slug]: numble,
     [slippyClone.slug]: slippyClone,
@@ -66,5 +62,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         notFound()
     }
 
-    return <ProjectDisplay projectData={project} />
+    const jsonLd = buildProjectGraphMinimal(slug, project)
+
+    return (
+        <>
+            <Script
+                id={`id-project-${slug}`}
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(jsonLd),
+                }}
+            />
+            <ProjectDisplay projectData={project} />
+        </>
+    )
 }

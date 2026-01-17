@@ -44,6 +44,12 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  keywords: [...SITE_CONFIG.keywords],
+  verification: {
+    google: "google-site-verification-code", // Replace with your code
+    yandex: "yandex-verification-code",
+    me: "your-personal-verification-code",
+  },
   openGraph: {
     title: SITE_CONFIG.title,
     description: SITE_CONFIG.description,
