@@ -1,8 +1,5 @@
 import { SITE_SLUGS, DOMAIN_URL } from "@/config/siteConfig"
 import {
-  bespoke,
-  automedicsKirkland,
-  iao,
   apihub,
   numble,
   slippyClone,
@@ -17,7 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const allRoutes = flatSlugs.filter((route) => typeof route === "string" && !route.includes("#"))
 
   // Add project routes
-  const projectRoutes = [bespoke, automedicsKirkland, iao, apihub, numble, slippyClone, dayflow].map(p => `/projects/${p.slug}`)
+  const projectRoutes = [ apihub, numble, slippyClone, dayflow].map(p => `/projects/${p.slug}`)
 
   const uniqueRoutes = Array.from(new Set([...allRoutes, ...projectRoutes]))
 

@@ -39,28 +39,7 @@ const projectsData: ProjectItem[] = [
     date: "2024-10-15",
     description: "Pixel-perfect clone of the Slippy UI.",
     type: "WebSite",
-  },
-  {
-    name: "AutoMedics Kirkland",
-    url: "/projects/automedics",
-    date: "2023-08-01",
-    description: "Auto Repair Shop Website with SEO focus.",
-    type: "WebSite",
-  },
-  {
-    name: "Bespoke Tint & PPF",
-    url: "/projects/bespoke",
-    date: "2023-06-01",
-    description: "High-performance website for a vehicle protection business.",
-    type: "WebSite",
-  },
-  {
-    name: "Iron & Oak",
-    url: "/projects/iron-and-oak",
-    date: "2023-04-01",
-    description: "Private Security Company Website focused on storytelling.",
-    type: "WebSite",
-  },
+  }
 ]
 
 const SITE = DOMAIN_URL.replace(/\/$/, "")

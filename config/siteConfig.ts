@@ -3,7 +3,7 @@ export const DOMAIN_URL = "https://mahir-patel.tech"
 export const SITE_CONFIG = {
   title: "Mahir Patel - Full-Stack Developer Portfolio | MERN Stack",
   description: "Portfolio of Mahir Patel, a full-stack developer specializing in the MERN stack (MongoDB, Express, React, Node.js), Next.js, and scaling web applications.",
-  url: DOMAIN_URL ?? "http://localhost:3000",
+  url: DOMAIN_URL ?? "https://mahir-patel.tech",
   siteName: "Mahir Patel",
   keywords: [
     "Mahir Patel",

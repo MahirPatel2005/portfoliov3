@@ -1,11 +1,6 @@
 {
   "/(site)/page": "/",
   "/(site)/projects/[slug]/page": "/projects/[slug]",
-  "/(site)/projects/automedics/page": "/projects/automedics",
-  "/(site)/projects/bespoke/page": "/projects/bespoke",
-  "/(site)/projects/iron-and-oak/page": "/projects/iron-and-oak",
-  "/(site)/projects/page": "/projects",
-  "/(site)/serbyte-dev-credit/page": "/serbyte-dev-credit",
   "/_global-error/page": "/_global-error",
   "/_not-found/page": "/_not-found",
   "/favicon.ico/route": "/favicon.ico",
