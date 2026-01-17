@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     images: [SITE_CONFIG.ogImage],
   },
   alternates: {
-    canonical: "./",
+    canonical: DOMAIN_URL,
   },
 }
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
