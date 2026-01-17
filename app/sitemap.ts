@@ -1,4 +1,13 @@
 import { SITE_SLUGS, DOMAIN_URL } from "@/config/siteConfig"
+import {
+  bespoke,
+  automedicsKirkland,
+  iao,
+  apihub,
+  numble,
+  slippyClone,
+  dayflow
+} from "@/app/data/project-data"
 import type { MetadataRoute } from "next"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -7,7 +16,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Filter out routes that contain hash symbols (scroll links)
   const allRoutes = flatSlugs.filter((route) => typeof route === "string" && !route.includes("#"))
 
-  return allRoutes.map((url) => ({
+  // Add project routes
+  const projectRoutes = [bespoke, automedicsKirkland, iao, apihub, numble, slippyClone, dayflow].map(p => `/projects/${p.slug}`)
+
+  const uniqueRoutes = Array.from(new Set([...allRoutes, ...projectRoutes]))
+
+  return uniqueRoutes.map((url) => ({
     url: DOMAIN_URL + url,
     lastModified: new Date().toISOString(),
     priority: url === "/" ? 1.0 : 0.8,
