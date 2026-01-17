@@ -25,8 +25,50 @@ const switzer = localFont({
 })
 export const metadata: Metadata = {
   metadataBase: new URL(DOMAIN_URL),
-  title: SITE_CONFIG.title,
+  title: {
+    default: SITE_CONFIG.title,
+    template: `%s | ${SITE_CONFIG.siteName}`,
+  },
   description: SITE_CONFIG.description,
+  authors: [...SITE_CONFIG.authors],
+  creator: SITE_CONFIG.creator,
+  publisher: SITE_CONFIG.publisher,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: SITE_CONFIG.title,
+    description: SITE_CONFIG.description,
+    url: DOMAIN_URL,
+    siteName: SITE_CONFIG.siteName,
+    images: [
+      {
+        url: SITE_CONFIG.ogImage,
+        width: 1200,
+        height: 630,
+        alt: SITE_CONFIG.title,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_CONFIG.title,
+    description: SITE_CONFIG.description,
+    images: [SITE_CONFIG.ogImage],
+  },
+  alternates: {
+    canonical: DOMAIN_URL,
+  },
 }
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (

@@ -13,22 +13,6 @@ export const metadata: Metadata = {
   title: SITE_CONFIG.title,
   description:
     "Explore the web developer portfolio of Mahir Patel, a full-stack engineer building fast, modern web applications. See projects in React, Next.js, and the MERN stack.",
-
-  keywords: [
-    "Mahir Patel",
-    "Web Developer Portfolio",
-    "MERN Stack",
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Full-Stack Engineer",
-    "India",
-  ],
-  authors: [{ name: "Mahir Patel" }],
-  creator: "Mahir Patel",
-  alternates: {
-    canonical: SITE_SLUGS.home,
-  },
 }
 
 const PortfolioPage: React.FC = () => {

@@ -1,13 +1,35 @@
-export const DOMAIN_URL = "https://www.austinserb.com"
+export const DOMAIN_URL = "https://mahir-patel.tech"
 
 export const SITE_CONFIG = {
   title: "Mahir Patel - Full-Stack Developer Portfolio | MERN Stack",
   description: "Portfolio of Mahir Patel, a full-stack developer specializing in the MERN stack (MongoDB, Express, React, Node.js), Next.js, and scaling web applications.",
   url: DOMAIN_URL ?? "http://localhost:3000",
   siteName: "Mahir Patel",
-  keywords: ["Mahir Patel", "Full-Stack Developer", "MERN Stack", "Next.js", "React", "Node.js", "MongoDB", "JavaScript", "India"],
+  keywords: [
+    "Mahir Patel",
+    "Full-Stack Developer",
+    "MERN Stack",
+    "Next.js",
+    "React",
+    "Node.js",
+    "MongoDB",
+    "JavaScript",
+    "India",
+    "Freelance Developer",
+    "Software Engineer",
+    "Web Development",
+    "UI/UX Design",
+    "Frontend Developer",
+    "Backend Developer",
+    "React Developer India",
+    "Next.js Expert",
+    "Scalable Web Apps"
+  ],
   ogImage: "/assets/bg-home-poster-optimized.webp",
   logo: "/serbyte-logo.png",
+  authors: [{ name: "Mahir Patel", url: DOMAIN_URL }],
+  creator: "Mahir Patel",
+  publisher: "Mahir Patel",
 } as const
 
 export const SITE_NAP = {
@@ -16,7 +38,7 @@ export const SITE_NAP = {
   contact: "Mahir Patel",
   contactTitle: "Full-Stack Developer",
   email: "mahir.patel.cg@gmail.com",
-  phone: "", // Phone not provided in resume public section, leaving empty or placeholder if needed
+  phone: "9558787386", // Phone not provided in resume public section, leaving empty or placeholder if needed
   formattedPhone: "",
   addressLink: "", // Removing specific address link
   street: "",

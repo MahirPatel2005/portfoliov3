@@ -13,32 +13,53 @@ interface ProjectItem {
 // Project data for schema
 const projectsData: ProjectItem[] = [
   {
-    name: "React Zero-UI",
-    url: externalLinks.zeroCore, // external canonical
-    date: "2025-06-01",
-    description: "Zero Re-Render State Library",
-    type: "SoftwareSourceCode",
+    name: "HRMS (Dayflow)",
+    url: "/projects/hrms",
+    date: "2025-01-15",
+    description: "Comprehensive HRMS dashboard for managing employee records, attendance, and payroll.",
+    type: "WebApplication",
   },
   {
-    name: "Vets Choice Insurance",
-    url: externalLinks.vetsChoice, // external canonical
-    date: "2025-05-20",
-    description: "Pet Insurance Website",
+    name: "APIHub",
+    url: "/projects/apihub",
+    date: "2024-12-01",
+    description: "API Discovery Platform for developers to find and test APIs.",
+    type: "WebApplication",
+  },
+  {
+    name: "Numble",
+    url: "/projects/numble",
+    date: "2024-11-20",
+    description: "Number Guessing Game built with React.",
+    type: "WebApplication",
+  },
+  {
+    name: "Slippy Clone",
+    url: "/projects/slippy-clone",
+    date: "2024-10-15",
+    description: "Pixel-perfect clone of the Slippy UI.",
     type: "WebSite",
   },
   {
-    name: "Zero Icon Sprite",
-    url: externalLinks.zeroIconSprite, // external canonical
-    date: "2024-06-15",
-    description: "SVG Build Tool",
-    type: "SoftwareApplication",
+    name: "AutoMedics Kirkland",
+    url: "/projects/automedics",
+    date: "2023-08-01",
+    description: "Auto Repair Shop Website with SEO focus.",
+    type: "WebSite",
   },
   {
-    name: "Entitled",
-    url: externalLinks.entitled, // external canonical
-    date: "2024-02-10",
-    description: "Event Management Web App",
-    type: "WebApplication",
+    name: "Bespoke Tint & PPF",
+    url: "/projects/bespoke",
+    date: "2023-06-01",
+    description: "High-performance website for a vehicle protection business.",
+    type: "WebSite",
+  },
+  {
+    name: "Iron & Oak",
+    url: "/projects/iron-and-oak",
+    date: "2023-04-01",
+    description: "Private Security Company Website focused on storytelling.",
+    type: "WebSite",
   },
 ]
 
