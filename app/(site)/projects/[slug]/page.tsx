@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         : `${project.hero.client} Project`
 
     return {
-        title: `Austin Serb - ${titleString}`,
+        title: `Mahir Patel - ${titleString}`,
         description: typeof project.hero.description === 'string'
             ? project.hero.description
             : `Details about the ${project.hero.client} project.`,
