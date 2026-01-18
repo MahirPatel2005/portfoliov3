@@ -118,6 +118,20 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       `,
               }}
             />
+            {/* Google Analytics */}
+            <Script
+              src="https://www.googletagmanager.com/gtag/js?id=G-DL21RJVKMB"
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-DL21RJVKMB');
+        `}
+            </Script>
             {/* DO NOT TOUCH THIS UNLESS YOU KNOW WHAT YOU ARE DOING */}
             {/* <Script id="ms-internet-explorer-compatibility" strategy="lazyOnload" src="https://serbyte.net/api/compatibility" /> */}
             <Analytics />

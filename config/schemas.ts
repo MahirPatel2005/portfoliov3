@@ -174,8 +174,9 @@ export const siteGraph = {
       jobTitle: "Full-Stack Engineer",
       image: { "@id": `${SITE}#headshot` },
       worksFor: { "@id": `${SITE}#org` },
-      sameAs: Object.values(SITE_NAP.profiles),
+      sameAs: Object.values(SITE_NAP.profiles).filter((url) => !!url),
       email: SITE_NAP.email,
+      knowsAbout: SITE_CONFIG.keywords,
     },
     {
       "@type": "WebSite",

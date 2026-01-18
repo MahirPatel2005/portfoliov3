@@ -23,7 +23,9 @@ export const SITE_CONFIG = {
     "Backend Developer",
     "React Developer India",
     "Next.js Expert",
-    "Scalable Web Apps"
+    "Scalable Web Apps",
+    "C++",
+    "System Design"
   ],
   ogImage: "/assets/bg-home-poster-optimized.webp",
   logo: "/serbyte-logo.png",
