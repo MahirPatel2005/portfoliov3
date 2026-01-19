@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/projects/bespoke":{},"/projects/automedics":{},"/projects/iron-and-oak":{},"/projects/apihub":{},"/projects/numble":{},"/projects/slippy-clone":{},"/projects/hrms":{}},"dynamicRoutes":{"/projects/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/projects/[slug]","routeRegex":"^\\/projects\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"2b8fc45045bc278b58604c3ac3f4d2eb","previewModeSigningKey":"dbaebbafc0a44bc8972073a98cf905d5965159bdfcc8be61f2a063cecda8ccbc","previewModeEncryptionKey":"b23eae2fa29c34d65be18740e6999ba79a68367708b7ccc75e2d4a1b5099e6a1"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "df8520e1a15739b738b87d10dc53a6f7",
+    "previewModeSigningKey": "75281088f58c9203a4013a68b4e5b4c810563d6f786b6d92c9634a48fd238189",
+    "previewModeEncryptionKey": "afa46140300cf64288cec6eebe04222b631f16b5d039a6fd13dc6a234259fb47"
+  }
+}

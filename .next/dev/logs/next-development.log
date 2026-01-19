@@ -1,106 +1,27 @@
-[00:00:00.814] Server  LOG      ✓ Ready in 555ms
-[00:00:28.516] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
-[00:00:28.516] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
-[00:02:38.244] Server  LOG      ✓ Compiled in 820ms
-[00:02:39.441] Server  LOG      ✓ Compiled in 717ms
-[00:02:44.230] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
-[00:02:44.230] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
-[00:04:13.826] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
-
-Check the render method of `ForwardRef(motion.div)`.  It was passed a child from Socials.
-[00:04:13.826] Browser ERROR   uncaughtError: Error: Failed prop type: The prop `href` expects a `string` or `object` in `<Link>`, but got `undefined` instead.
-Open your browser's console to view the Component stack trace.
-[00:07:42.940] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/projects/slippy-clone. Falling back to browser navigation. {}
-[00:09:59.352] Server  LOG      ✓ Compiled in 771ms
-[00:10:01.346] Server  LOG      ✓ Compiled in 692ms
-[00:13:48.896] Server  LOG      ✓ Compiled in 661ms
-[00:14:39.075] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:18:00.457] Server  LOG      ✓ Compiled in 845ms
-[01:18:01.829] Server  LOG      ✓ Compiled in 700ms
-[01:18:12.158] Server  LOG      ✓ Compiled in 839ms
-[01:18:32.905] Server  LOG      ✓ Compiled in 706ms
-[01:18:34.745] Server  LOG      ✓ Compiled in 683ms
-[01:18:36.193] Browser ERROR   ./app/(site)/projects/[slug]/page.tsx:2:1
-Export dayflow doesn't exist in target module
-   1 | import ProjectDisplay from "@/app/components/ProjectSection/ProjectDisplay"
->  2 | import {
-     | ^^^^^^^^
->  3 |     bespoke,
-     | ^^^^^^^^^^^^
->  4 |     automedicsKirkland,
-     | ^^^^^^^^^^^^
->  5 |     iao,
-     | ^^^^^^^^^^^^
->  6 |     apihub,
-     | ^^^^^^^^^^^^
->  7 |     numble,
-     | ^^^^^^^^^^^^
->  8 |     slippyClone,
-     | ^^^^^^^^^^^^
->  9 |     dayflow,
-     | ^^^^^^^^^^^^
-> 10 |     ProjectData
-     | ^^^^^^^^^^^^
-> 11 | } from "@/app/data/project-data"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import { notFound } from "next/navigation"
-  13 | import { Metadata } from "next"
-  14 |
-
-The export dayflow was not found in module [project]/app/data/project-data.tsx [app-rsc] (ecmascript).
-Did you mean to import iao?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-[01:18:37.339] Server  LOG      ✓ Compiled in 32ms
-[01:18:37.476] Browser ERROR   ./app/(site)/projects/[slug]/page.tsx:2:1
-Export dayflow doesn't exist in target module
-   1 | import ProjectDisplay from "@/app/components/ProjectSection/ProjectDisplay"
->  2 | import {
-     | ^^^^^^^^
->  3 |     bespoke,
-     | ^^^^^^^^^^^^
->  4 |     automedicsKirkland,
-     | ^^^^^^^^^^^^
->  5 |     iao,
-     | ^^^^^^^^^^^^
->  6 |     apihub,
-     | ^^^^^^^^^^^^
->  7 |     numble,
-     | ^^^^^^^^^^^^
->  8 |     slippyClone,
-     | ^^^^^^^^^^^^
->  9 |     dayflow,
-     | ^^^^^^^^^^^^
-> 10 |     ProjectData
-     | ^^^^^^^^^^^^
-> 11 | } from "@/app/data/project-data"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 | import { notFound } from "next/navigation"
-  13 | import { Metadata } from "next"
-  14 |
-
-The export dayflow was not found in module [project]/app/data/project-data.tsx [app-rsc] (ecmascript).
-Did you mean to import iao?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-[01:33:48.444] Server  LOG      ✓ Compiled in 689ms
-[01:33:51.766] Server  LOG      ✓ Compiled in 670ms
-[01:34:35.382] Server  LOG      ✓ Compiled in 731ms
-[01:37:11.154] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:42:52.576] Server  LOG      ✓ Compiled in 836ms
-[01:43:12.260] Server  LOG      ✓ Compiled in 650ms
-[01:43:15.205] Server  LOG      ✓ Compiled in 653ms
-[01:43:17.221] Server  LOG      ✓ Compiled in 649ms
-[01:43:19.267] Server  LOG      ✓ Compiled in 647ms
-[01:43:21.284] Server  LOG      ✓ Compiled in 645ms
-[01:43:40.390] Server  LOG      ✓ Compiled in 658ms
-[01:45:47.427] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[18:42:43.514] Server  LOG      ✓ Compiled in 693ms
-[18:43:45.874] Server  LOG      ✓ Compiled in 631ms
-[18:43:49.230] Server  LOG      ✓ Compiled in 630ms
-[20:32:33.735] Server  LOG      ✓ Compiled in 83ms
-[20:32:41.451] Server  LOG      ✓ Compiled in 56ms
-[20:35:12.163] Server  LOG      ✓ Compiled in 57ms
-[20:35:22.368] Server  LOG      ✓ Compiled in 22ms
-[20:35:31.861] Server  LOG      ✓ Compiled in 57ms
-[20:35:50.884] Server  LOG      ✓ Compiled in 675ms
-[20:36:07.738] Server  LOG      ✓ Compiled in 655ms
-[20:36:36.636] Server  LOG      ✓ Compiled in 719ms
+[00:00:02.174] Server  LOG      ✓ Ready in 1996ms
+[00:00:10.019] Server  LOG      ○ Compiling / ...
+[00:04:23.548] Server  LOG      ✓ Compiled in 693ms
+[00:04:35.871] Server  LOG      ✓ Compiled in 680ms
+[00:04:56.023] Server  ERROR    ⨯ ReferenceError: VideoModal is not defined
+[00:04:58.743] Browser ERROR   uncaughtError: ReferenceError: VideoModal is not defined
+[00:05:12.167] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:05:12.180] Server  LOG      ✓ Compiled in 667ms
+[00:08:10.011] Server  LOG      ✓ Compiled in 767ms
+[00:12:12.719] Server  LOG      ✓ Compiled in 664ms
+[00:15:03.734] Server  LOG      ✓ Compiled in 719ms
+[00:16:37.568] Server  LOG      ✓ Compiled in 662ms
+[00:21:03.610] Server  LOG      ✓ Compiled in 668ms
+[00:27:11.015] Server  LOG      ✓ Compiled in 704ms
+[00:27:13.145] Server  LOG      ✓ Compiled in 670ms
+[00:27:17.001] Server  LOG      ✓ Compiled in 667ms
+[00:27:18.454] Server  LOG      ✓ Compiled in 648ms
+[00:27:19.585] Server  LOG      ✓ Compiled in 675ms
+[00:27:20.907] Server  LOG      ✓ Compiled in 666ms
+[00:27:22.354] Server  LOG      ✓ Compiled in 661ms
+[00:27:27.246] Server  LOG      ✓ Compiled in 654ms
+[00:27:34.231] Server  LOG      ✓ Compiled in 675ms
+[00:27:44.593] Server  LOG      ✓ Compiled in 645ms
+[00:36:57.402] Server  LOG      ✓ Compiled in 701ms
+[00:37:06.654] Browser ERROR   uncaughtError: ReferenceError: Can't find variable: useEffect
+[00:37:09.134] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:37:09.160] Server  LOG      ✓ Compiled in 661ms

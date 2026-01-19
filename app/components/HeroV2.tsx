@@ -1,11 +1,25 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import { HeroScrollClick } from "./HeroScrollClick"
 import { ActivityDot } from "./ui/ActivityDot"
 import { AnimatedElement } from "./ui/AnimatedElement"
 import { CallToActionButton } from "./ui/CallToActionButton"
 import { WhiteButtonLink } from "./ui/WhiteButtonLink"
 import { Icon } from "./Icon"
+import { VideoModal } from "./ui/VideoModal"
 
 export const HeroV2 = () => {
+  const [isVideoOpen, setIsVideoOpen] = useState(false)
+
+  useEffect(() => {
+    // Open the video modal after a short delay to ensure the page has loaded
+    const timer = setTimeout(() => {
+      setIsVideoOpen(true)
+    }, 1000)
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <section className="mx-auto max-w-6xl pt-25 sm:pt-28 md:pt-32">
       <div className="inside relative flex [flex:1.5_0_0px] px-5.5 pb-12 md:px-11 md:pb-24">
@@ -35,11 +49,33 @@ export const HeroV2 = () => {
             Passionate about building scalable web applications and solving complex problems.
           </AnimatedElement>
 
-          <div className="flex flex-wrap items-center gap-4">
-            <CallToActionButton />
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-wrap items-center gap-4">
+              <CallToActionButton />
+              <AnimatedElement
+                element="div"
+                delay={0.7}
+                className="z-2"
+                variants={{
+                  hidden: { opacity: 0, scale: 0.8, filter: "blur(5px)" },
+                  visible: {
+                    opacity: 1,
+                    scale: 1,
+                    filter: "blur(0px)",
+                    transition: { delay: 0.7, duration: 0.5 },
+                  },
+                }}
+              >
+                <WhiteButtonLink href="/resume.pdf" download className="h-[48px] px-6 shadow-xl shadow-black/5 hover:shadow-none">
+                  <Icon name="page" height={18} width={18} className="h-[18px] w-[18px]" />
+                  Download Resume
+                </WhiteButtonLink>
+              </AnimatedElement>
+            </div>
+
             <AnimatedElement
               element="div"
-              delay={0.7}
+              delay={0.8}
               className="z-2"
               variants={{
                 hidden: { opacity: 0, scale: 0.8, filter: "blur(5px)" },
@@ -47,16 +83,21 @@ export const HeroV2 = () => {
                   opacity: 1,
                   scale: 1,
                   filter: "blur(0px)",
-                  transition: { delay: 0.7, duration: 0.5 },
+                  transition: { delay: 0.8, duration: 0.5 },
                 },
               }}
             >
-              <WhiteButtonLink href="/resume.pdf" download className="h-[48px] px-6 shadow-xl shadow-black/5 hover:shadow-none">
-                <Icon name="page" height={18} width={18} className="h-[18px] w-[18px]" />
-                Download Resume
-              </WhiteButtonLink>
+              <button
+                onClick={() => setIsVideoOpen(true)}
+                className="group bubble-hover-cta active relative z-1 inline-flex w-max items-center gap-2 rounded-full bg-red-600 hover:bg-red-700 px-4 py-3 text-sm font-medium tracking-tight text-white shadow-xl shadow-red-600/30 transition-colors"
+              >
+                <div className="pointer-events-none absolute inset-0.5 -z-1 rounded-full [background-image:url('/assets/framer-noise.png')] [background-size:164px] bg-repeat opacity-12" />
+                <Icon name="play" className="h-[18px] w-[18px] text-white fill-white" />
+                Watch Intro
+              </button>
             </AnimatedElement>
           </div>
+          <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} videoId="KPgjBvpN11c" />
         </div>
         {/* Don't remove this span */}
         <span data-stack-target-id className="xs:ml-[8%] [flex:1 _0_0px] xs:mt-20 mt-24 ml-[4%] h-1 w-2 sm:mt-11 xl:ml-[16%]" />

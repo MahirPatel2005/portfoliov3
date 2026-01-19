@@ -2,12 +2,6 @@
   "app": {
     "[project]/app/(site)/page": [
       "static/media/Switzer_Variable-s.p.bd58316e.woff2"
-    ],
-    "[project]/app/(site)/projects/[slug]/page": [
-      "static/media/Switzer_Variable-s.p.bd58316e.woff2"
-    ],
-    "[project]/app/(site)/projects/page": [
-      "static/media/Switzer_Variable-s.p.bd58316e.woff2"
     ]
   },
   "appUsingSizeAdjust": true,
