@@ -1,27 +1,37 @@
-[00:00:02.174] Server  LOG      ✓ Ready in 1996ms
-[00:00:10.019] Server  LOG      ○ Compiling / ...
-[00:04:23.548] Server  LOG      ✓ Compiled in 693ms
-[00:04:35.871] Server  LOG      ✓ Compiled in 680ms
-[00:04:56.023] Server  ERROR    ⨯ ReferenceError: VideoModal is not defined
-[00:04:58.743] Browser ERROR   uncaughtError: ReferenceError: VideoModal is not defined
-[00:05:12.167] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:05:12.180] Server  LOG      ✓ Compiled in 667ms
-[00:08:10.011] Server  LOG      ✓ Compiled in 767ms
-[00:12:12.719] Server  LOG      ✓ Compiled in 664ms
-[00:15:03.734] Server  LOG      ✓ Compiled in 719ms
-[00:16:37.568] Server  LOG      ✓ Compiled in 662ms
-[00:21:03.610] Server  LOG      ✓ Compiled in 668ms
-[00:27:11.015] Server  LOG      ✓ Compiled in 704ms
-[00:27:13.145] Server  LOG      ✓ Compiled in 670ms
-[00:27:17.001] Server  LOG      ✓ Compiled in 667ms
-[00:27:18.454] Server  LOG      ✓ Compiled in 648ms
-[00:27:19.585] Server  LOG      ✓ Compiled in 675ms
-[00:27:20.907] Server  LOG      ✓ Compiled in 666ms
-[00:27:22.354] Server  LOG      ✓ Compiled in 661ms
-[00:27:27.246] Server  LOG      ✓ Compiled in 654ms
-[00:27:34.231] Server  LOG      ✓ Compiled in 675ms
-[00:27:44.593] Server  LOG      ✓ Compiled in 645ms
-[00:36:57.402] Server  LOG      ✓ Compiled in 701ms
-[00:37:06.654] Browser ERROR   uncaughtError: ReferenceError: Can't find variable: useEffect
-[00:37:09.134] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:37:09.160] Server  LOG      ✓ Compiled in 661ms
+[00:00:00.527] Server  LOG      ✓ Ready in 374ms
+[00:00:06.625] Browser WARN    Image with src "/_next/static/media/slippy-screenshot.de15ac94.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:01:46.567] Server  LOG      ✓ Compiled in 315ms
+[00:01:46.570] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:01:48.024] Browser WARN    Image with src "/_next/static/media/slippy-screenshot.de15ac94.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading

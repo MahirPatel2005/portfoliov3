@@ -674,6 +674,7 @@ export const dayflow: ProjectData = {
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
+            loading="lazy"
             className="absolute inset-0 h-full w-full"
           />
         </div>

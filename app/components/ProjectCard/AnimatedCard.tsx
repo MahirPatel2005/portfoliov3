@@ -28,9 +28,10 @@ export interface AnimatedCardProps {
   href?: string
   githubUrl?: string
   title?: string
+  priority?: boolean
 }
 
-export function AnimatedCard({ src, alt, offset, color, type, gridId, progress, href, githubUrl, title }: AnimatedCardProps) {
+export function AnimatedCard({ src, alt, offset, color, type, gridId, progress, href, githubUrl, title, priority }: AnimatedCardProps) {
   const ref = useRef<HTMLDivElement>(null)
   useCompositorSpring(ref, progress)
 
@@ -62,7 +63,7 @@ export function AnimatedCard({ src, alt, offset, color, type, gridId, progress, 
             we need to avoid nested <a> tags. Card uses <a> tags for buttons. 
             So we should NOT wrap Card in an <a> tag.
         */}
-        <Card src={src} alt={alt} liveUrl={primaryLink} githubUrl={githubUrl} title={title} detailUrl={`${SITE_SLUGS.projects}/${gridId}`} />
+        <Card src={src} alt={alt} liveUrl={primaryLink} githubUrl={githubUrl} title={title} detailUrl={`${SITE_SLUGS.projects}/${gridId}`} priority={priority} />
       </div>
     </div>
   )

@@ -9,6 +9,7 @@ export const Card = ({
   githubUrl,
   title,
   detailUrl,
+  priority,
 }: {
   src: StaticImageData
   alt: string
@@ -21,11 +22,12 @@ export const Card = ({
   type?: string
   reveal?: boolean
   text?: string
+  priority?: boolean
 }) => {
   return (
     <div className="h-full w-full overflow-hidden rounded-2xl group relative bg-gray-100">
       <div className="h-full w-full duration-400 group-hover:scale-105 transition-transform">
-        <Image className="h-full w-full object-cover" src={src} alt={alt} priority decoding="async" />
+        <Image className="h-full w-full object-cover" src={src} alt={alt} priority={priority} decoding="async" />
 
         {/* Overlay - Visible on Hover */}
         <div className="absolute inset-0 flex items-end justify-between p-6 opacity-0 transition-all duration-300 group-hover:opacity-100 bg-gradient-to-t from-black/80 via-black/40 to-transparent">

@@ -83,6 +83,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           href="http://apihub-pi.vercel.app/"
           githubUrl="https://github.com/MahirPatel2005/0412"
           title="APIHub"
+          priority={true}
         />
         <AnimatedCard
           key="numble"
