@@ -12,13 +12,6 @@ import { VideoModal } from "./ui/VideoModal"
 export const HeroV2 = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false)
 
-  useEffect(() => {
-    // Open the video modal after a short delay to ensure the page has loaded
-    const timer = setTimeout(() => {
-      setIsVideoOpen(true)
-    }, 1000)
-    return () => clearTimeout(timer)
-  }, [])
 
   return (
     <section className="mx-auto max-w-6xl pt-25 sm:pt-28 md:pt-32">

@@ -8,6 +8,7 @@
   "/(site)/serbyte-dev-credit/page": "/serbyte-dev-credit",
   "/_global-error/page": "/_global-error",
   "/_not-found/page": "/_not-found",
+  "/apple-icon.jpg/route": "/apple-icon.jpg",
   "/favicon.ico/route": "/favicon.ico",
   "/manifest.webmanifest/route": "/manifest.webmanifest",
   "/opengraph-image.jpg/route": "/opengraph-image.jpg",

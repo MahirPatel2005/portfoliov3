@@ -35,3 +35,6 @@ Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
 [00:01:46.710] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
 [00:01:48.024] Browser WARN    Image with src "/_next/static/media/slippy-screenshot.de15ac94.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:14:07.040] Server  LOG      ✓ Compiled in 130ms
+[00:14:08.317] Server  LOG      ✓ Compiled in 124ms
+[00:14:30.360] Server  LOG      ✓ Compiled in 653ms

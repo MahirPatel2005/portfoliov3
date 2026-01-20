@@ -472,13 +472,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ui$2f$V
 ;
 const HeroV2 = ()=>{
     const [isVideoOpen, setIsVideoOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        // Open the video modal after a short delay to ensure the page has loaded
-        const timer = setTimeout(()=>{
-            setIsVideoOpen(true);
-        }, 1000);
-        return ()=>clearTimeout(timer);
-    }, []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "mx-auto max-w-6xl pt-25 sm:pt-28 md:pt-32",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -494,14 +487,14 @@ const HeroV2 = ()=>{
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ui$2f$ActivityDot$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ActivityDot"], {}, void 0, false, {
                                     fileName: "[project]/app/components/HeroV2.tsx",
-                                    lineNumber: 32,
+                                    lineNumber: 25,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 "India"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/HeroV2.tsx",
-                            lineNumber: 27,
+                            lineNumber: 20,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -515,13 +508,13 @@ const HeroV2 = ()=>{
                                     children: "Mahir Patel"
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/HeroV2.tsx",
-                                    lineNumber: 37,
+                                    lineNumber: 30,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 " ",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                     fileName: "[project]/app/components/HeroV2.tsx",
-                                    lineNumber: 40,
+                                    lineNumber: 33,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ui$2f$AnimatedElement$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatedElement"], {
@@ -532,7 +525,7 @@ const HeroV2 = ()=>{
                                     className: "inline-block"
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/HeroV2.tsx",
-                                    lineNumber: 41,
+                                    lineNumber: 34,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ui$2f$AnimatedElement$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatedElement"], {
@@ -544,13 +537,13 @@ const HeroV2 = ()=>{
                                     children: "Portfolio"
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/HeroV2.tsx",
-                                    lineNumber: 42,
+                                    lineNumber: 35,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/HeroV2.tsx",
-                            lineNumber: 36,
+                            lineNumber: 29,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ui$2f$AnimatedElement$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatedElement"], {
@@ -563,20 +556,20 @@ const HeroV2 = ()=>{
                                     children: "Full-stack Developer."
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/HeroV2.tsx",
-                                    lineNumber: 48,
+                                    lineNumber: 41,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 " MERN Stack & Next.js Specialist. ",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                     fileName: "[project]/app/components/HeroV2.tsx",
-                                    lineNumber: 48,
+                                    lineNumber: 41,
                                     columnNumber: 126
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 "Passionate about building scalable web applications and solving complex problems."
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/HeroV2.tsx",
-                            lineNumber: 47,
+                            lineNumber: 40,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -587,7 +580,7 @@ const HeroV2 = ()=>{
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ui$2f$CallToActionButton$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CallToActionButton"], {}, void 0, false, {
                                             fileName: "[project]/app/components/HeroV2.tsx",
-                                            lineNumber: 54,
+                                            lineNumber: 47,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ui$2f$AnimatedElement$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatedElement"], {
@@ -622,25 +615,25 @@ const HeroV2 = ()=>{
                                                         className: "h-[18px] w-[18px]"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/HeroV2.tsx",
-                                                        lineNumber: 70,
+                                                        lineNumber: 63,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     "Download Resume"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/components/HeroV2.tsx",
-                                                lineNumber: 69,
+                                                lineNumber: 62,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/HeroV2.tsx",
-                                            lineNumber: 55,
+                                            lineNumber: 48,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/HeroV2.tsx",
-                                    lineNumber: 53,
+                                    lineNumber: 46,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ui$2f$AnimatedElement$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatedElement"], {
@@ -671,7 +664,7 @@ const HeroV2 = ()=>{
                                                 className: "pointer-events-none absolute inset-0.5 -z-1 rounded-full [background-image:url('/assets/framer-noise.png')] [background-size:164px] bg-repeat opacity-12"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/HeroV2.tsx",
-                                                lineNumber: 94,
+                                                lineNumber: 87,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Icon$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Icon"], {
@@ -679,25 +672,25 @@ const HeroV2 = ()=>{
                                                 className: "h-[18px] w-[18px] text-white fill-white"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/HeroV2.tsx",
-                                                lineNumber: 95,
+                                                lineNumber: 88,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             "Watch Intro"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/components/HeroV2.tsx",
-                                        lineNumber: 90,
+                                        lineNumber: 83,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/HeroV2.tsx",
-                                    lineNumber: 76,
+                                    lineNumber: 69,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/HeroV2.tsx",
-                            lineNumber: 52,
+                            lineNumber: 45,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ui$2f$VideoModal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["VideoModal"], {
@@ -706,13 +699,13 @@ const HeroV2 = ()=>{
                             videoId: "KPgjBvpN11c"
                         }, void 0, false, {
                             fileName: "[project]/app/components/HeroV2.tsx",
-                            lineNumber: 100,
+                            lineNumber: 93,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/HeroV2.tsx",
-                    lineNumber: 26,
+                    lineNumber: 19,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -720,30 +713,30 @@ const HeroV2 = ()=>{
                     className: "xs:ml-[8%] [flex:1 _0_0px] xs:mt-20 mt-24 ml-[4%] h-1 w-2 sm:mt-11 xl:ml-[16%]"
                 }, void 0, false, {
                     fileName: "[project]/app/components/HeroV2.tsx",
-                    lineNumber: 103,
+                    lineNumber: 96,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$HeroScrollClick$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["HeroScrollClick"], {}, void 0, false, {
                     fileName: "[project]/app/components/HeroV2.tsx",
-                    lineNumber: 104,
+                    lineNumber: 97,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "pointer-events-none absolute inset-y-0 left-1/3 -z-1 hidden w-full bg-radial from-indigo-100 via-transparent to-transparent blur-3xl md:block"
                 }, void 0, false, {
                     fileName: "[project]/app/components/HeroV2.tsx",
-                    lineNumber: 107,
+                    lineNumber: 100,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/app/components/HeroV2.tsx",
-            lineNumber: 25,
+            lineNumber: 18,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/app/components/HeroV2.tsx",
-        lineNumber: 24,
+        lineNumber: 17,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
