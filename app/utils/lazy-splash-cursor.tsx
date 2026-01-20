@@ -16,11 +16,15 @@ export function LazySplashCursor() {
   const [cursorMoved, setCursorMoved] = useState(false)
 
   useEffect(() => {
-    if (!hasFinePointer || reduceMotion || cursorMoved) return
-    const onFirstMove = () => setCursorMoved(true)
-    // fire once, then auto-remove
-    window.addEventListener("pointermove", onFirstMove, { once: true })
-    return () => window.removeEventListener("pointermove", onFirstMove)
+    // Delay initialization to reduce TBT
+    const delayTimer = setTimeout(() => {
+      if (!hasFinePointer || reduceMotion || cursorMoved) return
+      const onFirstMove = () => setCursorMoved(true)
+      // fire once, then auto-remove
+      window.addEventListener("pointermove", onFirstMove, { once: true })
+    }, 4000)
+
+    return () => clearTimeout(delayTimer)
   }, [hasFinePointer, reduceMotion, cursorMoved])
 
   return cursorMoved ? <SplashCursor /> : null

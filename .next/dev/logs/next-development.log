@@ -38,3 +38,85 @@ Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
 [00:14:07.040] Server  LOG      ✓ Compiled in 130ms
 [00:14:08.317] Server  LOG      ✓ Compiled in 124ms
 [00:14:30.360] Server  LOG      ✓ Compiled in 653ms
+[00:30:41.561] Server  LOG      ✓ Compiled in 752ms
+[00:30:42.925] Server  LOG      ✓ Compiled in 715ms
+[00:30:56.859] Server  LOG      ✓ Compiled in 659ms
+[00:32:24.254] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:32:24.258] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:32:24.260] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:32:24.260] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:32:24.345] Browser ERROR   ./app/components/HeroV2.tsx:15:10
+Ecmascript file had an error
+  13 |   const [isVideoOpen, setIsVideoOpen] = useState(false)
+  14 |
+> 15 |   const [isVideoOpen, setIsVideoOpen] = useState(false)
+     |          ^^^^^^^^^^^
+  16 |
+  17 |
+  18 |   return (
+
+the name `isVideoOpen` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./app/components/HeroV2.tsx
+    ./app/(site)/page.tsx
+[00:32:24.345] Browser ERROR   ./app/components/HeroV2.tsx:15:23
+Ecmascript file had an error
+  13 |   const [isVideoOpen, setIsVideoOpen] = useState(false)
+  14 |
+> 15 |   const [isVideoOpen, setIsVideoOpen] = useState(false)
+     |                       ^^^^^^^^^^^^^^
+  16 |
+  17 |
+  18 |   return (
+
+the name `setIsVideoOpen` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./app/components/HeroV2.tsx
+    ./app/(site)/page.tsx
+[00:32:24.345] Browser ERROR   ./app/components/HeroV2.tsx:15:10
+Ecmascript file had an error
+  13 |   const [isVideoOpen, setIsVideoOpen] = useState(false)
+  14 |
+> 15 |   const [isVideoOpen, setIsVideoOpen] = useState(false)
+     |          ^^^^^^^^^^^
+  16 |
+  17 |
+  18 |   return (
+
+the name `isVideoOpen` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./app/components/HeroV2.tsx
+    ./app/(site)/page.tsx
+[00:32:24.345] Browser ERROR   ./app/components/HeroV2.tsx:15:23
+Ecmascript file had an error
+  13 |   const [isVideoOpen, setIsVideoOpen] = useState(false)
+  14 |
+> 15 |   const [isVideoOpen, setIsVideoOpen] = useState(false)
+     |                       ^^^^^^^^^^^^^^
+  16 |
+  17 |
+  18 |   return (
+
+the name `setIsVideoOpen` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./app/components/HeroV2.tsx
+    ./app/(site)/page.tsx
+[00:32:24.345] Browser ERROR   uncaughtError: TypeError: __turbopack_context__.A("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript, async loader)").useState is not a function. (In '__turbopack_context__.A("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript, async loader)").useState(false)', '__turbopack_context__.A("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript, async loader)").useState' is undefined)
+[00:32:24.345] Browser ERROR   uncaughtError: TypeError: __turbopack_context__.A("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript, async loader)").useState is not a function. (In '__turbopack_context__.A("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript, async loader)").useState(false)', '__turbopack_context__.A("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript, async loader)").useState' is undefined)
+[00:32:24.345] Browser WARN    Unexpected import of module [project]/app/components/DotCursor.tsx [app-client] (ecmascript, next/dynamic entry) from module [project]/app/utils/lazy-dot-cursor.tsx [app-client] (ecmascript), which was deleted by an HMR update
+[00:32:24.345] Browser WARN    Unexpected import of module [project]/app/components/SplashCursor.tsx [app-client] (ecmascript, next/dynamic entry) from module [project]/app/utils/lazy-splash-cursor.tsx [app-client] (ecmascript), which was deleted by an HMR update
+[00:32:24.446] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:32:24.446] Browser ERROR   unhandledRejection: undefined
+[00:32:24.446] Browser ERROR   unhandledRejection: undefined
+[00:32:24.446] Browser ERROR   unhandledRejection: undefined
+[00:32:24.446] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:32:42.431] Browser WARN    Image with src "/_next/static/media/slippy-screenshot.de15ac94.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading

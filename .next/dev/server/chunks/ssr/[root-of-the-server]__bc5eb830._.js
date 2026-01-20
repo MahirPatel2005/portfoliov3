@@ -604,13 +604,16 @@ function LazySplashCursor() {
     const reduceMotion = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$hooks$2f$useMediaQuery$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMediaQuery"])("(prefers-reduced-motion: reduce)");
     const [cursorMoved, setCursorMoved] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if (!hasFinePointer || reduceMotion || cursorMoved) return;
-        const onFirstMove = ()=>setCursorMoved(true);
-        // fire once, then auto-remove
-        window.addEventListener("pointermove", onFirstMove, {
-            once: true
-        });
-        return ()=>window.removeEventListener("pointermove", onFirstMove);
+        // Delay initialization to reduce TBT
+        const delayTimer = setTimeout(()=>{
+            if (!hasFinePointer || reduceMotion || cursorMoved) return;
+            const onFirstMove = ()=>setCursorMoved(true);
+            // fire once, then auto-remove
+            window.addEventListener("pointermove", onFirstMove, {
+                once: true
+            });
+        }, 4000);
+        return ()=>clearTimeout(delayTimer);
     }, [
         hasFinePointer,
         reduceMotion,
@@ -618,7 +621,7 @@ function LazySplashCursor() {
     ]);
     return cursorMoved ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SplashCursor, {}, void 0, false, {
         fileName: "[project]/app/utils/lazy-splash-cursor.tsx",
-        lineNumber: 26,
+        lineNumber: 30,
         columnNumber: 24
     }, this) : null;
 }
@@ -638,14 +641,14 @@ function LazyTiltedWrapper({ children, ...props }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/app/utils/lazy-splash-cursor.tsx",
-        lineNumber: 37,
+        lineNumber: 41,
         columnNumber: 5
     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(TiltedWrapper, {
         ...props,
         children: children
     }, void 0, false, {
         fileName: "[project]/app/utils/lazy-splash-cursor.tsx",
-        lineNumber: 39,
+        lineNumber: 43,
         columnNumber: 5
     }, this);
 }
@@ -662,6 +665,7 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/shared/lib/app-dynamic.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$hooks$2f$useMediaQuery$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/hooks/useMediaQuery.ts [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 ;
 "use client";
 ;
@@ -675,12 +679,21 @@ const DotCursor = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5
     },
     ssr: false
 });
+;
 function DesktopCursor() {
     const hasFinePointer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$hooks$2f$useMediaQuery$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMediaQuery"])("(pointer:fine)");
-    if (!hasFinePointer) return null;
+    const [isVisible, setIsVisible] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        // Defer loading of the cursor to reduce initial TBT
+        const timer = setTimeout(()=>{
+            setIsVisible(true);
+        }, 3500);
+        return ()=>clearTimeout(timer);
+    }, []);
+    if (!hasFinePointer || !isVisible) return null;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(DotCursor, {}, void 0, false, {
         fileName: "[project]/app/utils/lazy-dot-cursor.tsx",
-        lineNumber: 13,
+        lineNumber: 24,
         columnNumber: 10
     }, this);
 }

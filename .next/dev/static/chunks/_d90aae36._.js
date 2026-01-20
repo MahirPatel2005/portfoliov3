@@ -694,16 +694,21 @@ function LazySplashCursor() {
     const [cursorMoved, setCursorMoved] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "LazySplashCursor.useEffect": ()=>{
-            if (!hasFinePointer || reduceMotion || cursorMoved) return;
-            const onFirstMove = {
-                "LazySplashCursor.useEffect.onFirstMove": ()=>setCursorMoved(true)
-            }["LazySplashCursor.useEffect.onFirstMove"];
-            // fire once, then auto-remove
-            window.addEventListener("pointermove", onFirstMove, {
-                once: true
-            });
+            // Delay initialization to reduce TBT
+            const delayTimer = setTimeout({
+                "LazySplashCursor.useEffect.delayTimer": ()=>{
+                    if (!hasFinePointer || reduceMotion || cursorMoved) return;
+                    const onFirstMove = {
+                        "LazySplashCursor.useEffect.delayTimer.onFirstMove": ()=>setCursorMoved(true)
+                    }["LazySplashCursor.useEffect.delayTimer.onFirstMove"];
+                    // fire once, then auto-remove
+                    window.addEventListener("pointermove", onFirstMove, {
+                        once: true
+                    });
+                }
+            }["LazySplashCursor.useEffect.delayTimer"], 4000);
             return ({
-                "LazySplashCursor.useEffect": ()=>window.removeEventListener("pointermove", onFirstMove)
+                "LazySplashCursor.useEffect": ()=>clearTimeout(delayTimer)
             })["LazySplashCursor.useEffect"];
         }
     }["LazySplashCursor.useEffect"], [
@@ -713,7 +718,7 @@ function LazySplashCursor() {
     ]);
     return cursorMoved ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SplashCursor, {}, void 0, false, {
         fileName: "[project]/app/utils/lazy-splash-cursor.tsx",
-        lineNumber: 26,
+        lineNumber: 30,
         columnNumber: 24
     }, this) : null;
 }
@@ -742,14 +747,14 @@ function LazyTiltedWrapper({ children, ...props }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/app/utils/lazy-splash-cursor.tsx",
-        lineNumber: 37,
+        lineNumber: 41,
         columnNumber: 5
     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(TiltedWrapper, {
         ...props,
         children: children
     }, void 0, false, {
         fileName: "[project]/app/utils/lazy-splash-cursor.tsx",
-        lineNumber: 39,
+        lineNumber: 43,
         columnNumber: 5
     }, this);
 }
@@ -780,6 +785,7 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/shared/lib/app-dynamic.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$hooks$2f$useMediaQuery$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/hooks/useMediaQuery.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 ;
 ;
 var _s = __turbopack_context__.k.signature();
@@ -795,17 +801,32 @@ const DotCursor = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5
     ssr: false
 });
 _c = DotCursor;
+;
 function DesktopCursor() {
     _s();
     const hasFinePointer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$hooks$2f$useMediaQuery$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMediaQuery"])("(pointer:fine)");
-    if (!hasFinePointer) return null;
+    const [isVisible, setIsVisible] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "DesktopCursor.useEffect": ()=>{
+            // Defer loading of the cursor to reduce initial TBT
+            const timer = setTimeout({
+                "DesktopCursor.useEffect.timer": ()=>{
+                    setIsVisible(true);
+                }
+            }["DesktopCursor.useEffect.timer"], 3500);
+            return ({
+                "DesktopCursor.useEffect": ()=>clearTimeout(timer)
+            })["DesktopCursor.useEffect"];
+        }
+    }["DesktopCursor.useEffect"], []);
+    if (!hasFinePointer || !isVisible) return null;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(DotCursor, {}, void 0, false, {
         fileName: "[project]/app/utils/lazy-dot-cursor.tsx",
-        lineNumber: 13,
+        lineNumber: 24,
         columnNumber: 10
     }, this);
 }
-_s(DesktopCursor, "Ohh9NErGxFzpYgpUxq1PT1o6Uns=", false, function() {
+_s(DesktopCursor, "JUTGp+3Qc2ckiSFsSQ393qYvWp4=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$hooks$2f$useMediaQuery$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMediaQuery"]
     ];
