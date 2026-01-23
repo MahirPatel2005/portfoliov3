@@ -8,7 +8,9 @@
   "/(site)/serbyte-dev-credit/page": "app/(site)/serbyte-dev-credit/page.js",
   "/_global-error/page": "app/_global-error/page.js",
   "/_not-found/page": "app/_not-found/page.js",
+  "/apple-icon.jpg/route": "app/apple-icon.jpg/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
   "/opengraph-image.jpg/route": "app/opengraph-image.jpg/route.js",
   "/robots.txt/route": "app/robots.txt/route.js",
   "/sitemap.xml/route": "app/sitemap.xml/route.js"

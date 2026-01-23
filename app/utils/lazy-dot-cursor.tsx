@@ -6,9 +6,20 @@ export const DotCursor = /*#__PURE__*/ dynamic(() => import("../components/DotCu
   ssr: false,
 })
 
+import { useState, useEffect } from "react"
+
 export function DesktopCursor() {
   const hasFinePointer = useMediaQuery("(pointer:fine)")
+  const [isVisible, setIsVisible] = useState(false)
 
-  if (!hasFinePointer) return null
+  useEffect(() => {
+    // Defer loading of the cursor to reduce initial TBT
+    const timer = setTimeout(() => {
+      setIsVisible(true)
+    }, 3500)
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (!hasFinePointer || !isVisible) return null
   return <DotCursor />
 }

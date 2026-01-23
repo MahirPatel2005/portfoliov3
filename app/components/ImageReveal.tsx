@@ -38,7 +38,7 @@ export function ImageReveal({ className = "", ...img }: ImageRevealProps): React
           fill
           alt="Mahir Patel Profile Photo"
           className={`rounded-2xl object-cover saturate-125`}
-          sizes="(max-width: 560px) 300px, (max-width: 768px) 500px, 50vw"
+          sizes="(max-width: 768px) 100vw, 240px"
         />
       </MotionDiv>
     </div>
