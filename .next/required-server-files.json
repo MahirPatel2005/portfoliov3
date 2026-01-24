@@ -106,7 +106,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/Users/mahir/Downloads/portfoliov3",
+    "outputFileTracingRoot": "/Users/mahir/iCloud Drive (Archive)/Documents/portfolio",
     "allowedDevOrigins": [
       "localhost:3000"
     ],
@@ -299,11 +299,11 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.ts",
     "turbopack": {
-      "root": "/Users/mahir/Downloads/portfoliov3"
+      "root": "/Users/mahir/iCloud Drive (Archive)/Documents/portfolio"
     },
     "distDirRoot": ".next"
   },
-  "appDir": "/Users/mahir/Downloads/portfoliov3",
+  "appDir": "/Users/mahir/iCloud Drive (Archive)/Documents/portfolio",
   "relativeAppDir": "",
   "files": [
     ".next/routes-manifest.json",
