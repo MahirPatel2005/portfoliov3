@@ -6,6 +6,8 @@ import { Link } from "@/app/utils/Link"
 import { GitHubCalendar } from "react-github-calendar"
 import { useEffect, useState } from "react"
 import { MotionDiv } from "@/app/utils/lazy-ui"
+import ReactMarkdown from "react-markdown"
+import remarkGfm from "remark-gfm"
 
 interface GitHubUser {
     login: string
@@ -16,15 +18,45 @@ interface GitHubUser {
     avatar_url: string
 }
 
+interface Repo {
+    name: string
+    description: string
+    language: string
+    stargazers_count: number
+    forks_count: number
+    html_url: string
+    owner: {
+        login: string
+    }
+}
+
 export const GitHubStats = () => {
     const [stats, setStats] = useState<GitHubUser | null>(null)
+    const [topRepos, setTopRepos] = useState<Repo[]>([])
+    const [readmeContent, setReadmeContent] = useState<string>("")
     const username = SITE_NAP.profiles.github.split("/").pop() || "mahirpatel2005"
 
     useEffect(() => {
+        // 1. Fetch User Stats
         fetch(`https://api.github.com/users/${username}`)
             .then(res => res.json())
             .then(data => setStats(data))
             .catch(() => setStats(null))
+
+        // 2. Fetch Repos and sort by stars (Reliable alternative to Pinned Repos)
+        fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`)
+            .then(res => res.json())
+            .then(data => {
+                if (Array.isArray(data)) {
+                    // Sort by stars descending
+                    const sorted = data.sort((a: Repo, b: Repo) => b.stargazers_count - a.stargazers_count)
+                    setTopRepos(sorted.slice(0, 6))
+                }
+            })
+            .catch(err => console.error("Failed to fetch repos", err))
+
+        // 3. Fetch Profile README (Raw content)
+        // Try 'main' branch first
     }, [username])
 
 
@@ -86,6 +118,43 @@ export const GitHubStats = () => {
                     ))}
                 </div>
 
+                {/* Top Repositories */}
+                {topRepos.length > 0 && (
+                    <div className="mt-2">
+                        <p className="mb-4 text-base font-semibold text-gray-900">Top Repositories</p>
+                        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                            {topRepos.map((repo, i) => (
+                                <Link
+                                    key={i}
+                                    href={repo.html_url}
+                                    target="_blank"
+                                    className="flex flex-col gap-2 rounded-xl border border-gray-200 p-4 transition-all hover:border-gray-400 hover:shadow-sm"
+                                >
+                                    <div className="flex items-center justify-between">
+                                        <span className="font-semibold text-gray-900 truncate">{repo.name}</span>
+                                        <div className="flex items-center gap-1 text-xs text-gray-500">
+                                            <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" className="fill-current text-yellow-500">
+                                                <path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
+                                            </svg>
+                                            {repo.stargazers_count}
+                                        </div>
+                                    </div>
+                                    <p className="line-clamp-2 text-xs text-gray-500">{repo.description}</p>
+                                    <div className="mt-auto flex items-center gap-2">
+                                        {repo.language && (
+                                            <div className="flex items-center gap-1">
+                                                <span className="h-2 w-2 rounded-full bg-blue-400"></span>
+                                                <span className="text-xs text-gray-500">{repo.language}</span>
+                                            </div>
+                                        )}
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+
                 {/* Calendar */}
                 <div className="mt-2 text-sm">
                     <p className="mb-4 text-base font-semibold text-gray-900">Contributions</p>
@@ -106,9 +175,33 @@ export const GitHubStats = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* Profile README */}
+                {readmeContent && (
+                    <div className="mt-6 border-t border-gray-100 pt-6">
+                        <p className="mb-4 text-base font-semibold text-gray-900">Profile README</p>
+                        <div className="prose prose-sm prose-gray max-w-none overflow-hidden rounded-xl bg-gray-50/50 p-6">
+                            <ReactMarkdown
+                                remarkPlugins={[remarkGfm]}
+                                components={{
+                                    h1: ({ node, ...props }) => <h1 className="text-xl font-bold mb-2 text-gray-900" {...props} />,
+                                    h2: ({ node, ...props }) => <h2 className="text-lg font-semibold mb-2 mt-4 text-gray-900" {...props} />,
+                                    h3: ({ node, ...props }) => <h3 className="text-base font-semibold mb-1 mt-3 text-gray-900" {...props} />,
+                                    p: ({ node, ...props }) => <p className="mb-2 text-gray-700 leading-relaxed" {...props} />,
+                                    a: ({ node, ...props }) => <a className="text-blue-600 hover:underline" target="_blank" {...props} />,
+                                    ul: ({ node, ...props }) => <ul className="list-disc pl-5 mb-2 text-gray-700" {...props} />,
+                                    ol: ({ node, ...props }) => <ol className="list-decimal pl-5 mb-2 text-gray-700" {...props} />,
+                                    img: ({ node, ...props }) => <img className="max-w-full h-auto rounded-lg my-2" {...props} />,
+                                    code: ({ node, ...props }) => <code className="bg-gray-100 rounded px-1 py-0.5 text-sm font-mono text-gray-800" {...props} />,
+                                    pre: ({ node, ...props }) => <pre className="bg-gray-100 rounded p-3 overflow-x-auto my-2 text-sm" {...props} />,
+                                }}
+                            >
+                                {readmeContent}
+                            </ReactMarkdown>
+                        </div>
+                    </div>
+                )}
             </div>
-
-
         </MotionDiv>
     )
 }

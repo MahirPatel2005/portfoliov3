@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @source not "../public/bespoke-hero.html";
 
 @custom-variant reveal-false ([data-reveal="false"] &);

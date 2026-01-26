@@ -45,6 +45,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$utils$2f$Link$2e$tsx_
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$github$2d$calendar$2f$build$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-github-calendar/build/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$utils$2f$lazy$2d$ui$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/utils/lazy-ui.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$markdown$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__Markdown__as__default$3e$__ = __turbopack_context__.i("[project]/node_modules/react-markdown/lib/index.js [app-client] (ecmascript) <export Markdown as default>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$remark$2d$gfm$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/remark-gfm/lib/index.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
@@ -54,12 +56,17 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
+;
 const GitHubStats = ()=>{
     _s();
     const [stats, setStats] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [topRepos, setTopRepos] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [readmeContent, setReadmeContent] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const username = __TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SITE_NAP"].profiles.github.split("/").pop() || "mahirpatel2005";
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "GitHubStats.useEffect": ()=>{
+            // 1. Fetch User Stats
             fetch(`https://api.github.com/users/${username}`).then({
                 "GitHubStats.useEffect": (res)=>res.json()
             }["GitHubStats.useEffect"]).then({
@@ -67,6 +74,24 @@ const GitHubStats = ()=>{
             }["GitHubStats.useEffect"]).catch({
                 "GitHubStats.useEffect": ()=>setStats(null)
             }["GitHubStats.useEffect"]);
+            // 2. Fetch Repos and sort by stars (Reliable alternative to Pinned Repos)
+            fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`).then({
+                "GitHubStats.useEffect": (res)=>res.json()
+            }["GitHubStats.useEffect"]).then({
+                "GitHubStats.useEffect": (data)=>{
+                    if (Array.isArray(data)) {
+                        // Sort by stars descending
+                        const sorted = data.sort({
+                            "GitHubStats.useEffect.sorted": (a, b)=>b.stargazers_count - a.stargazers_count
+                        }["GitHubStats.useEffect.sorted"]);
+                        setTopRepos(sorted.slice(0, 6));
+                    }
+                }
+            }["GitHubStats.useEffect"]).catch({
+                "GitHubStats.useEffect": (err)=>console.error("Failed to fetch repos", err)
+            }["GitHubStats.useEffect"]);
+        // 3. Fetch Profile README (Raw content)
+        // Try 'main' branch first
         }
     }["GitHubStats.useEffect"], [
         username
@@ -81,32 +106,32 @@ const GitHubStats = ()=>{
                         className: "h-12 w-12 rounded-full bg-gray-200"
                     }, void 0, false, {
                         fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                        lineNumber: 35,
+                        lineNumber: 67,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "h-4 w-32 bg-gray-200"
                     }, void 0, false, {
                         fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                        lineNumber: 36,
+                        lineNumber: 68,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "h-32 w-full rounded-xl bg-gray-200"
                     }, void 0, false, {
                         fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                        lineNumber: 37,
+                        lineNumber: 69,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                lineNumber: 34,
+                lineNumber: 66,
                 columnNumber: 17
             }, ("TURBOPACK compile-time value", void 0))
         }, void 0, false, {
             fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-            lineNumber: 33,
+            lineNumber: 65,
             columnNumber: 13
         }, ("TURBOPACK compile-time value", void 0));
     }
@@ -139,7 +164,7 @@ const GitHubStats = ()=>{
                                             className: "absolute inset-0 rounded-full bg-black opacity-10 blur-md"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                                            lineNumber: 55,
+                                            lineNumber: 87,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Icon$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Icon"], {
@@ -147,13 +172,13 @@ const GitHubStats = ()=>{
                                             className: "relative h-12 w-12 text-gray-900"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                                            lineNumber: 56,
+                                            lineNumber: 88,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                                    lineNumber: 54,
+                                    lineNumber: 86,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -163,7 +188,7 @@ const GitHubStats = ()=>{
                                             children: "GitHub"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                                            lineNumber: 59,
+                                            lineNumber: 91,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$utils$2f$Link$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Link"], {
@@ -176,19 +201,19 @@ const GitHubStats = ()=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                                            lineNumber: 60,
+                                            lineNumber: 92,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                                    lineNumber: 58,
+                                    lineNumber: 90,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                            lineNumber: 53,
+                            lineNumber: 85,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$utils$2f$Link$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Link"], {
@@ -198,13 +223,13 @@ const GitHubStats = ()=>{
                             children: "View Profile"
                         }, void 0, false, {
                             fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                            lineNumber: 65,
+                            lineNumber: 97,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                    lineNumber: 52,
+                    lineNumber: 84,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -234,7 +259,7 @@ const GitHubStats = ()=>{
                                     children: stat.label
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                                    lineNumber: 83,
+                                    lineNumber: 115,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -242,19 +267,139 @@ const GitHubStats = ()=>{
                                     children: stat.value
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                                    lineNumber: 84,
+                                    lineNumber: 116,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, i, true, {
                             fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                            lineNumber: 82,
+                            lineNumber: 114,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0)))
                 }, void 0, false, {
                     fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                    lineNumber: 75,
+                    lineNumber: 107,
                     columnNumber: 17
+                }, ("TURBOPACK compile-time value", void 0)),
+                topRepos.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "mt-2",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "mb-4 text-base font-semibold text-gray-900",
+                            children: "Top Repositories"
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                            lineNumber: 124,
+                            columnNumber: 25
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "grid grid-cols-1 gap-4 md:grid-cols-2",
+                            children: topRepos.map((repo, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$utils$2f$Link$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Link"], {
+                                    href: repo.html_url,
+                                    target: "_blank",
+                                    className: "flex flex-col gap-2 rounded-xl border border-gray-200 p-4 transition-all hover:border-gray-400 hover:shadow-sm",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex items-center justify-between",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "font-semibold text-gray-900 truncate",
+                                                    children: repo.name
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                                    lineNumber: 134,
+                                                    columnNumber: 41
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex items-center gap-1 text-xs text-gray-500",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                                            "aria-hidden": "true",
+                                                            height: "16",
+                                                            viewBox: "0 0 16 16",
+                                                            version: "1.1",
+                                                            width: "16",
+                                                            className: "fill-current text-yellow-500",
+                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                                d: "M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                                                lineNumber: 137,
+                                                                columnNumber: 49
+                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                                            lineNumber: 136,
+                                                            columnNumber: 45
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        repo.stargazers_count
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                                    lineNumber: 135,
+                                                    columnNumber: 41
+                                                }, ("TURBOPACK compile-time value", void 0))
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                            lineNumber: 133,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "line-clamp-2 text-xs text-gray-500",
+                                            children: repo.description
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                            lineNumber: 142,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "mt-auto flex items-center gap-2",
+                                            children: repo.language && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex items-center gap-1",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "h-2 w-2 rounded-full bg-blue-400"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                                        lineNumber: 146,
+                                                        columnNumber: 49
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-xs text-gray-500",
+                                                        children: repo.language
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                                        lineNumber: 147,
+                                                        columnNumber: 49
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                                lineNumber: 145,
+                                                columnNumber: 45
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                            lineNumber: 143,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    ]
+                                }, i, true, {
+                                    fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                    lineNumber: 127,
+                                    columnNumber: 33
+                                }, ("TURBOPACK compile-time value", void 0)))
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                            lineNumber: 125,
+                            columnNumber: 25
+                        }, ("TURBOPACK compile-time value", void 0))
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                    lineNumber: 123,
+                    columnNumber: 21
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "mt-2 text-sm",
@@ -264,7 +409,7 @@ const GitHubStats = ()=>{
                             children: "Contributions"
                         }, void 0, false, {
                             fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                            lineNumber: 91,
+                            lineNumber: 160,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -298,38 +443,155 @@ const GitHubStats = ()=>{
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                                    lineNumber: 94,
+                                    lineNumber: 163,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                                lineNumber: 93,
+                                lineNumber: 162,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                            lineNumber: 92,
+                            lineNumber: 161,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-                    lineNumber: 90,
+                    lineNumber: 159,
                     columnNumber: 17
+                }, ("TURBOPACK compile-time value", void 0)),
+                readmeContent && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "mt-6 border-t border-gray-100 pt-6",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "mb-4 text-base font-semibold text-gray-900",
+                            children: "Profile README"
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                            lineNumber: 182,
+                            columnNumber: 25
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "prose prose-sm prose-gray max-w-none overflow-hidden rounded-xl bg-gray-50/50 p-6",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$markdown$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__Markdown__as__default$3e$__["default"], {
+                                remarkPlugins: [
+                                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$remark$2d$gfm$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"]
+                                ],
+                                components: {
+                                    h1: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                            className: "text-xl font-bold mb-2 text-gray-900",
+                                            ...props
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                            lineNumber: 187,
+                                            columnNumber: 65
+                                        }, void 0),
+                                    h2: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                            className: "text-lg font-semibold mb-2 mt-4 text-gray-900",
+                                            ...props
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                            lineNumber: 188,
+                                            columnNumber: 65
+                                        }, void 0),
+                                    h3: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                            className: "text-base font-semibold mb-1 mt-3 text-gray-900",
+                                            ...props
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                            lineNumber: 189,
+                                            columnNumber: 65
+                                        }, void 0),
+                                    p: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "mb-2 text-gray-700 leading-relaxed",
+                                            ...props
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                            lineNumber: 190,
+                                            columnNumber: 64
+                                        }, void 0),
+                                    a: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            className: "text-blue-600 hover:underline",
+                                            target: "_blank",
+                                            ...props
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                            lineNumber: 191,
+                                            columnNumber: 64
+                                        }, void 0),
+                                    ul: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                            className: "list-disc pl-5 mb-2 text-gray-700",
+                                            ...props
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                            lineNumber: 192,
+                                            columnNumber: 65
+                                        }, void 0),
+                                    ol: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
+                                            className: "list-decimal pl-5 mb-2 text-gray-700",
+                                            ...props
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                            lineNumber: 193,
+                                            columnNumber: 65
+                                        }, void 0),
+                                    img: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                            className: "max-w-full h-auto rounded-lg my-2",
+                                            ...props
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                            lineNumber: 194,
+                                            columnNumber: 66
+                                        }, void 0),
+                                    code: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
+                                            className: "bg-gray-100 rounded px-1 py-0.5 text-sm font-mono text-gray-800",
+                                            ...props
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                            lineNumber: 195,
+                                            columnNumber: 67
+                                        }, void 0),
+                                    pre: ({ node, ...props })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("pre", {
+                                            className: "bg-gray-100 rounded p-3 overflow-x-auto my-2 text-sm",
+                                            ...props
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                            lineNumber: 196,
+                                            columnNumber: 66
+                                        }, void 0)
+                                },
+                                children: readmeContent
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                                lineNumber: 184,
+                                columnNumber: 29
+                            }, ("TURBOPACK compile-time value", void 0))
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                            lineNumber: 183,
+                            columnNumber: 25
+                        }, ("TURBOPACK compile-time value", void 0))
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
+                    lineNumber: 181,
+                    columnNumber: 21
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-            lineNumber: 50,
+            lineNumber: 82,
             columnNumber: 13
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/app/components/CodingProfile/GitHubStats.tsx",
-        lineNumber: 44,
+        lineNumber: 76,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(GitHubStats, "QHCAg5+sC7SrLiGx+x4h2IICBFk=");
+_s(GitHubStats, "bQqRX/TXgOm1wQk/09bZPMHUutQ=");
 _c = GitHubStats;
 var _c;
 __turbopack_context__.k.register(_c, "GitHubStats");
@@ -362,117 +624,14 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-// Custom Donut Chart Component
-const SolvedDonut = ({ easy, medium, hard, total, totalQuestions })=>{
-    const radius = 40;
-    const circumference = 2 * Math.PI * radius;
-    // Calculate stroke format: [dashArray, dashOffset]
-    // But for a simple stacked view, we usually just do segments. 
-    // Here we will do a simple background + single progress or stacked? 
-    // The user image shows a segmented arc. Let's try 3 arcs.
-    // Easier approach: Conic gradient for the ring
-    const totalS = easy + medium + hard;
-    const easyDeg = easy / totalQuestions * 360;
-    const mediumDeg = medium / totalQuestions * 360;
-    const hardDeg = hard / totalQuestions * 360;
-    // Actually the user image shows 'total solved' vs 'total questions' overall? 
-    // Or maybe just the 3 categories making up the circle?
-    // The image shows: 178/3821 Solved. And a yellow/teal ring.
-    // Let's create a custom SVG with 3 paths for Easy/Medium/Hard.
-    // Normalize logic for visibility
-    const safeTotal = totalQuestions || 1;
-    const easyDash = easy / safeTotal * circumference;
-    const mediumDash = medium / safeTotal * circumference;
-    const hardDash = hard / safeTotal * circumference;
-    const gap = 2 // Gap between segments if we want, or 0.
-    ;
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "relative flex h-32 w-32 items-center justify-center",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                className: "h-full w-full -rotate-90 transform",
-                viewBox: "0 0 100 100",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
-                        cx: "50",
-                        cy: "50",
-                        r: radius,
-                        fill: "none",
-                        stroke: "#f3f4f6",
-                        strokeWidth: "8"
-                    }, void 0, false, {
-                        fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                        lineNumber: 56,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
-                        cx: "50",
-                        cy: "50",
-                        r: radius,
-                        fill: "none",
-                        stroke: "#10b981",
-                        strokeWidth: "8",
-                        strokeDasharray: `${easyDash} ${circumference}`,
-                        strokeLinecap: "round",
-                        className: "opacity-80"
-                    }, void 0, false, {
-                        fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                        lineNumber: 59,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0))
-                ]
-            }, void 0, true, {
-                fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                lineNumber: 54,
-                columnNumber: 13
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute inset-0 flex flex-col items-center justify-center text-center",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "text-2xl font-bold text-gray-900",
-                        children: total
-                    }, void 0, false, {
-                        fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                        lineNumber: 76,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "text-[10px] text-gray-400",
-                        children: "Solved"
-                    }, void 0, false, {
-                        fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                        lineNumber: 77,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0))
-                ]
-            }, void 0, true, {
-                fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                lineNumber: 75,
-                columnNumber: 13
-            }, ("TURBOPACK compile-time value", void 0))
-        ]
-    }, void 0, true, {
-        fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-        lineNumber: 53,
-        columnNumber: 9
-    }, ("TURBOPACK compile-time value", void 0));
-};
-_c = SolvedDonut;
 // Better Donut using Conic Gradient for simplicity and robustness
 const CSSDonut = ({ easy, medium, hard, total })=>{
     // Colors
     const cEasy = "#00b8a3";
     const cMed = "#ffc01e";
     const cHard = "#ef4743";
-    const cTrack = "#eee";
-    // Ratios assuming the circle represents Total Solved distributions (or Total Questions? usually Total Solved distribution in these charts)
-    // Wait, LeetCode profile usually shows "Solved X / Total Y". 
-    // The arc usually fills up based on Total Solved / Total Questions.
-    // And the colors inside that arc represent the mix. 
-    // That's complex. Let's simplify: A ring showing total progress, and separate breakdown.
-    // Or just recreate the visual from the image roughly.
-    // Image: "178/3821 Solved", large yellow arc. 
+    // Avoid division by zero
+    const safeTotal = total || 1;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "relative flex h-36 w-36 items-center justify-center",
         children: [
@@ -480,27 +639,27 @@ const CSSDonut = ({ easy, medium, hard, total })=>{
                 className: "absolute inset-0 rounded-full",
                 style: {
                     background: `conic-gradient(
-                        ${cEasy} 0% ${easy / total * 100}%,
-                        ${cMed} ${easy / total * 100}% ${(easy + medium) / total * 100}%,
-                        ${cHard} ${(easy + medium) / total * 100}% 100%
+                        ${cEasy} 0% ${easy / safeTotal * 100}%,
+                        ${cMed} ${easy / safeTotal * 100}% ${(easy + medium) / safeTotal * 100}%,
+                        ${cHard} ${(easy + medium) / safeTotal * 100}% 100%
                     )`,
                     mask: "radial-gradient(transparent 60%, black 61%)",
                     WebkitMask: "radial-gradient(transparent 60%, black 61%)" // Donut hole
                 }
             }, void 0, false, {
                 fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                lineNumber: 102,
+                lineNumber: 43,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "z-10 flex flex-col items-center",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "text-3xl font-extra-bold text-gray-900",
+                        className: "text-3xl font-extrabold text-gray-900",
                         children: total
                     }, void 0, false, {
                         fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                        lineNumber: 115,
+                        lineNumber: 56,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -508,41 +667,51 @@ const CSSDonut = ({ easy, medium, hard, total })=>{
                         children: "Solved"
                     }, void 0, false, {
                         fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                        lineNumber: 116,
+                        lineNumber: 57,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                lineNumber: 114,
+                lineNumber: 55,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-        lineNumber: 100,
+        lineNumber: 41,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
-_c1 = CSSDonut;
+_c = CSSDonut;
 const LeetCodeStats = ()=>{
     _s();
     const [stats, setStats] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [contestStats, setContestStats] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const username = __TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SITE_NAP"].profiles.leetcode.split("/").pop() || "Mahir_R_Patell";
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "LeetCodeStats.useEffect": ()=>{
-            // Use the proxy from config or direct
-            fetch(`https://leetcode-stats-api.herokuapp.com/${username}`).then({
-                "LeetCodeStats.useEffect": (res)=>res.json()
-            }["LeetCodeStats.useEffect"]).then({
-                "LeetCodeStats.useEffect": (data)=>{
-                    if (data.status === "success") {
-                        setStats(data);
+            const fetchData = {
+                "LeetCodeStats.useEffect.fetchData": async ()=>{
+                    try {
+                        // Fetch Solved Stats
+                        const userRes = await fetch(`https://leetcode-stats-api.herokuapp.com/${username}`);
+                        const userData = await userRes.json();
+                        if (userData.status === "success") {
+                            setStats(userData);
+                        }
+                        // Fetch Contest Stats
+                        const contestRes = await fetch(`https://alfa-leetcode-api.onrender.com/${username}/contest`);
+                        const contestData = await contestRes.json();
+                        if (contestData) {
+                            setContestStats(contestData);
+                        }
+                    } catch (err) {
+                        console.error("Failed to fetch LeetCode stats", err);
                     }
                 }
-            }["LeetCodeStats.useEffect"]).catch({
-                "LeetCodeStats.useEffect": (err)=>console.error(err)
-            }["LeetCodeStats.useEffect"]);
+            }["LeetCodeStats.useEffect.fetchData"];
+            fetchData();
         }
     }["LeetCodeStats.useEffect"], [
         username
@@ -557,37 +726,36 @@ const LeetCodeStats = ()=>{
                         className: "h-12 w-12 rounded-full bg-gray-200"
                     }, void 0, false, {
                         fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                        lineNumber: 143,
+                        lineNumber: 95,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "h-4 w-32 bg-gray-200"
                     }, void 0, false, {
                         fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                        lineNumber: 144,
+                        lineNumber: 96,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "h-32 w-full rounded-xl bg-gray-200"
                     }, void 0, false, {
                         fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                        lineNumber: 145,
+                        lineNumber: 97,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                lineNumber: 142,
+                lineNumber: 94,
                 columnNumber: 17
             }, ("TURBOPACK compile-time value", void 0))
         }, void 0, false, {
             fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-            lineNumber: 141,
+            lineNumber: 93,
             columnNumber: 13
         }, ("TURBOPACK compile-time value", void 0));
     }
     // Process submission calendar
-    // API returns unix timestamp as key (string) -> count
     const calendarData = [];
     if (stats.submissionCalendar) {
         const today = new Date();
@@ -603,8 +771,6 @@ const LeetCodeStats = ()=>{
             }
         });
     }
-    // Fill gaps not needed for react-activity-calendar usually, it handles sparse data? 
-    // Start/End date props.
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$utils$2f$lazy$2d$ui$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MotionDiv"], {
         initial: {
             opacity: 0,
@@ -635,7 +801,7 @@ const LeetCodeStats = ()=>{
                                             className: "absolute inset-0 rounded-full bg-yellow-400 opacity-20 blur-md"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                            lineNumber: 185,
+                                            lineNumber: 133,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -651,7 +817,7 @@ const LeetCodeStats = ()=>{
                                                         fill: "#B3B1B0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                                        lineNumber: 190,
+                                                        lineNumber: 137,
                                                         columnNumber: 37
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -659,7 +825,7 @@ const LeetCodeStats = ()=>{
                                                         fill: "#FFA116"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                                        lineNumber: 191,
+                                                        lineNumber: 138,
                                                         columnNumber: 37
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -667,24 +833,24 @@ const LeetCodeStats = ()=>{
                                                         fill: "#FFA116"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                                        lineNumber: 192,
+                                                        lineNumber: 139,
                                                         columnNumber: 37
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                                lineNumber: 189,
+                                                lineNumber: 136,
                                                 columnNumber: 33
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                            lineNumber: 187,
+                                            lineNumber: 135,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                    lineNumber: 184,
+                                    lineNumber: 132,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -694,7 +860,7 @@ const LeetCodeStats = ()=>{
                                             children: "LeetCode"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                            lineNumber: 197,
+                                            lineNumber: 144,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -705,19 +871,19 @@ const LeetCodeStats = ()=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                            lineNumber: 198,
+                                            lineNumber: 145,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                    lineNumber: 196,
+                                    lineNumber: 143,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                            lineNumber: 183,
+                            lineNumber: 131,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$utils$2f$Link$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Link"], {
@@ -727,20 +893,20 @@ const LeetCodeStats = ()=>{
                             children: "View Profile"
                         }, void 0, false, {
                             fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                            lineNumber: 201,
+                            lineNumber: 148,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                    lineNumber: 182,
+                    lineNumber: 130,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex flex-col gap-8 md:flex-row",
+                    className: "flex flex-col gap-8 lg:flex-row",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex flex-col items-center justify-center gap-4 rounded-3xl bg-gray-50 p-6 md:w-1/3",
+                            className: "flex flex-col items-center justify-center gap-4 rounded-3xl bg-gray-50 p-6 lg:w-1/3",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CSSDonut, {
                                     easy: stats.easySolved,
@@ -749,7 +915,7 @@ const LeetCodeStats = ()=>{
                                     total: stats.totalSolved
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                    lineNumber: 213,
+                                    lineNumber: 161,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -762,145 +928,213 @@ const LeetCodeStats = ()=>{
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                    lineNumber: 214,
+                                    lineNumber: 162,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                            lineNumber: 212,
+                            lineNumber: 160,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex flex-1 flex-col justify-center gap-4",
+                            className: "flex flex-1 flex-col gap-4",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "group/stat flex items-center justify-between rounded-xl bg-gray-50 p-3 px-4 transition-colors hover:bg-teal-50",
+                                    className: "grid grid-cols-1 gap-3 sm:grid-cols-3",
                                     children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "font-medium text-gray-600 group-hover/stat:text-teal-700",
-                                            children: "Easy"
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                            lineNumber: 220,
-                                            columnNumber: 29
-                                        }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "font-bold text-gray-900 group-hover/stat:text-teal-700",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "group/stat flex flex-col items-center justify-center rounded-xl bg-gray-50 p-3 transition-colors hover:bg-teal-50",
                                             children: [
-                                                stats.easySolved,
-                                                " ",
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "text-xs font-normal text-gray-400",
-                                                    children: [
-                                                        "/ ",
-                                                        stats.totalEasy
-                                                    ]
-                                                }, void 0, true, {
+                                                    className: "mb-1 text-xs font-semibold uppercase tracking-wider text-gray-400 group-hover/stat:text-teal-600",
+                                                    children: "Easy"
+                                                }, void 0, false, {
                                                     fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                                    lineNumber: 221,
-                                                    columnNumber: 121
+                                                    lineNumber: 170,
+                                                    columnNumber: 33
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "text-xl font-bold text-gray-900 group-hover/stat:text-teal-700",
+                                                    children: stats.easySolved
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
+                                                    lineNumber: 171,
+                                                    columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                            lineNumber: 221,
+                                            lineNumber: 169,
+                                            columnNumber: 29
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "group/stat flex flex-col items-center justify-center rounded-xl bg-gray-50 p-3 transition-colors hover:bg-yellow-50",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "mb-1 text-xs font-semibold uppercase tracking-wider text-gray-400 group-hover/stat:text-yellow-600",
+                                                    children: "Medium"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
+                                                    lineNumber: 174,
+                                                    columnNumber: 33
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "text-xl font-bold text-gray-900 group-hover/stat:text-yellow-700",
+                                                    children: stats.mediumSolved
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
+                                                    lineNumber: 175,
+                                                    columnNumber: 33
+                                                }, ("TURBOPACK compile-time value", void 0))
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
+                                            lineNumber: 173,
+                                            columnNumber: 29
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "group/stat flex flex-col items-center justify-center rounded-xl bg-gray-50 p-3 transition-colors hover:bg-red-50",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "mb-1 text-xs font-semibold uppercase tracking-wider text-gray-400 group-hover/stat:text-red-600",
+                                                    children: "Hard"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
+                                                    lineNumber: 178,
+                                                    columnNumber: 33
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "text-xl font-bold text-gray-900 group-hover/stat:text-red-700",
+                                                    children: stats.hardSolved
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
+                                                    lineNumber: 179,
+                                                    columnNumber: 33
+                                                }, ("TURBOPACK compile-time value", void 0))
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
+                                            lineNumber: 177,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                    lineNumber: 219,
+                                    lineNumber: 168,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "group/stat flex items-center justify-between rounded-xl bg-gray-50 p-3 px-4 transition-colors hover:bg-yellow-50",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "font-medium text-gray-600 group-hover/stat:text-yellow-700",
-                                            children: "Medium"
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                            lineNumber: 224,
-                                            columnNumber: 29
-                                        }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "font-bold text-gray-900 group-hover/stat:text-yellow-700",
-                                            children: [
-                                                stats.mediumSolved,
-                                                " ",
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "text-xs font-normal text-gray-400",
-                                                    children: [
-                                                        "/ ",
-                                                        stats.totalMedium
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                                    lineNumber: 225,
-                                                    columnNumber: 125
-                                                }, ("TURBOPACK compile-time value", void 0))
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                            lineNumber: 225,
-                                            columnNumber: 29
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    ]
-                                }, void 0, true, {
+                                contestStats && contestStats.contestRating > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "relative mt-2 overflow-hidden rounded-xl bg-gradient-to-br from-orange-50 to-amber-50 p-4 border border-orange-100",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "relative z-10 flex items-center justify-between",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex flex-col",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-xs font-bold uppercase tracking-wider text-orange-400",
+                                                        children: "Contest Rating"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
+                                                        lineNumber: 188,
+                                                        columnNumber: 41
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex items-baseline gap-2",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "text-2xl font-black text-gray-900",
+                                                                children: Math.round(contestStats.contestRating)
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
+                                                                lineNumber: 190,
+                                                                columnNumber: 45
+                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                            contestStats.contestTopPercentage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "text-xs font-medium text-orange-600 bg-orange-100 px-2 py-0.5 rounded-full",
+                                                                children: [
+                                                                    "Top ",
+                                                                    contestStats.contestTopPercentage,
+                                                                    "%"
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
+                                                                lineNumber: 192,
+                                                                columnNumber: 49
+                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
+                                                        lineNumber: 189,
+                                                        columnNumber: 41
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
+                                                lineNumber: 187,
+                                                columnNumber: 37
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "text-right",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "text-xs text-gray-500",
+                                                        children: "Global Rank"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
+                                                        lineNumber: 199,
+                                                        columnNumber: 41
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "font-bold text-gray-900",
+                                                        children: [
+                                                            "#",
+                                                            contestStats.contestGlobalRanking.toLocaleString()
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
+                                                        lineNumber: 200,
+                                                        columnNumber: 41
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "text-[10px] text-gray-400",
+                                                        children: [
+                                                            "Attended: ",
+                                                            contestStats.contestAttend
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
+                                                        lineNumber: 201,
+                                                        columnNumber: 41
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
+                                                lineNumber: 198,
+                                                columnNumber: 37
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
+                                        lineNumber: 186,
+                                        columnNumber: 33
+                                    }, ("TURBOPACK compile-time value", void 0))
+                                }, void 0, false, {
                                     fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                    lineNumber: 223,
-                                    columnNumber: 25
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "group/stat flex items-center justify-between rounded-xl bg-gray-50 p-3 px-4 transition-colors hover:bg-red-50",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "font-medium text-gray-600 group-hover/stat:text-red-700",
-                                            children: "Hard"
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                            lineNumber: 228,
-                                            columnNumber: 29
-                                        }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "font-bold text-gray-900 group-hover/stat:text-red-700",
-                                            children: [
-                                                stats.hardSolved,
-                                                " ",
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "text-xs font-normal text-gray-400",
-                                                    children: [
-                                                        "/ ",
-                                                        stats.totalHard
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                                    lineNumber: 229,
-                                                    columnNumber: 120
-                                                }, ("TURBOPACK compile-time value", void 0))
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                            lineNumber: 229,
-                                            columnNumber: 29
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                    lineNumber: 227,
-                                    columnNumber: 25
+                                    lineNumber: 185,
+                                    columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                            lineNumber: 218,
+                            lineNumber: 166,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                    lineNumber: 210,
+                    lineNumber: 158,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -911,7 +1145,7 @@ const LeetCodeStats = ()=>{
                             children: "Submission History"
                         }, void 0, false, {
                             fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                            lineNumber: 236,
+                            lineNumber: 211,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -944,43 +1178,42 @@ const LeetCodeStats = ()=>{
                                     fontSize: 12
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                    lineNumber: 239,
+                                    lineNumber: 214,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                                lineNumber: 238,
+                                lineNumber: 213,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                            lineNumber: 237,
+                            lineNumber: 212,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-                    lineNumber: 235,
+                    lineNumber: 210,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-            lineNumber: 180,
+            lineNumber: 128,
             columnNumber: 13
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/app/components/CodingProfile/LeetCodeStats.tsx",
-        lineNumber: 174,
+        lineNumber: 122,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(LeetCodeStats, "QHCAg5+sC7SrLiGx+x4h2IICBFk=");
-_c2 = LeetCodeStats;
-var _c, _c1, _c2;
-__turbopack_context__.k.register(_c, "SolvedDonut");
-__turbopack_context__.k.register(_c1, "CSSDonut");
-__turbopack_context__.k.register(_c2, "LeetCodeStats");
+_s(LeetCodeStats, "19NbVMa9jj2F2uIuqY9dWxiobIs=");
+_c1 = LeetCodeStats;
+var _c, _c1;
+__turbopack_context__.k.register(_c, "CSSDonut");
+__turbopack_context__.k.register(_c1, "LeetCodeStats");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

@@ -1109,3 +1109,72 @@ Import trace:
     ./app/layout.tsx [Server Component]
 [00:06:54.739] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:07:05.585] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:15:46.969] Server  LOG      ✓ Compiled in 813ms
+[00:16:33.701] Server  LOG      ✓ Compiled in 1105ms
+[00:16:34.274] Browser ERROR   Failed to fetch pinned repos {}
+[00:18:56.254] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:56.749] Browser ERROR   Failed to fetch pinned repos {}
+[00:20:00.873] Server  LOG      ✓ Compiled in 914ms
+[00:25:03.115] Server  LOG      ✓ Compiled in 189ms
+[00:25:03.218] Browser ERROR   ./app/components/CodingProfile/GitHubStats.tsx:203:2
+Parsing ecmascript source code failed
+  201 |         </MotionDiv>
+  202 |     )
+> 203 | }
+      |  ^
+  204 |
+
+Expected ',', got '<eof>'
+
+Import trace:
+  Server Component:
+    ./app/components/CodingProfile/GitHubStats.tsx
+    ./app/(site)/coding-profiles/page.tsx
+[00:25:20.521] Server  LOG      ✓ Compiled in 36ms
+[00:25:20.623] Browser ERROR   ./app/components/CodingProfile/GitHubStats.tsx:72:5
+Parsing ecmascript source code failed
+  70 | }
+  71 |
+> 72 |     return (
+     |     ^^^^^^
+  73 |         <MotionDiv
+  74 |             initial={{ opacity: 0, y: 20 }}
+  75 |             animate={{ opacity: 1, y: 0 }}
+
+Expected ',', got 'return'
+
+Import trace:
+  Server Component:
+    ./app/components/CodingProfile/GitHubStats.tsx
+    ./app/(site)/coding-profiles/page.tsx
+[00:25:27.335] Server  LOG      ✓ Compiled in 39ms
+[00:25:27.438] Browser ERROR   ./app/components/CodingProfile/GitHubStats.tsx:203:2
+Parsing ecmascript source code failed
+  201 |         </MotionDiv>
+  202 |     )
+> 203 | }
+      |  ^
+  204 |
+
+Expected ',', got '<eof>'
+
+Import trace:
+  Server Component:
+    ./app/components/CodingProfile/GitHubStats.tsx
+    ./app/(site)/coding-profiles/page.tsx
+[00:25:39.810] Browser ERROR   ./app/components/CodingProfile/GitHubStats.tsx:203:2
+Parsing ecmascript source code failed
+  201 |         </MotionDiv>
+  202 |     )
+> 203 | }
+      |  ^
+  204 |
+
+Expected ',', got '<eof>'
+
+Import trace:
+  Server Component:
+    ./app/components/CodingProfile/GitHubStats.tsx
+    ./app/(site)/coding-profiles/page.tsx
+[00:26:31.949] Server  LOG      ✓ Compiled in 849ms
+[00:26:38.957] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
