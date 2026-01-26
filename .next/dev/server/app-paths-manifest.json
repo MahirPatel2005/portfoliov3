@@ -1,4 +1,5 @@
 {
+  "/(site)/coding-profiles/page": "app/(site)/coding-profiles/page.js",
   "/(site)/page": "app/(site)/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
+  "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js"
 }

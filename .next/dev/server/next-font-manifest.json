@@ -1,9 +1,9 @@
 {
   "app": {
-    "[project]/app/(site)/page": [
+    "[project]/app/(site)/coding-profiles/page": [
       "static/media/Switzer_Variable-s.p.bd58316e.woff2"
     ],
-    "[project]/app/_not-found/page": [
+    "[project]/app/(site)/page": [
       "static/media/Switzer_Variable-s.p.bd58316e.woff2"
     ]
   },

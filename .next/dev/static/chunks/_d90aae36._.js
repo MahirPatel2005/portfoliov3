@@ -430,7 +430,8 @@ const SITE_NAP = {
         yelp: "",
         pinterest: "",
         gbp: "",
-        github: "https://github.com/mahirpatel2005"
+        github: "https://github.com/mahirpatel2005",
+        leetcode: "https://leetcode.com/u/Mahir_R_Patell/"
     },
     logo: "/serbyte-logo.png",
     favicon: "/favicon.ico",
@@ -447,7 +448,8 @@ const SITE_SLUGS = {
         automedics: "/projects/automedics",
         bespoke: "/projects/bespoke",
         iao: "/projects/iron-and-oak",
-        hrms: "/projects/hrms"
+        hrms: "/projects/hrms",
+        codingProfiles: "/coding-profiles"
     }
 };
 const externalLinks = {

@@ -122,7 +122,8 @@ const SITE_NAP = {
         yelp: "",
         pinterest: "",
         gbp: "",
-        github: "https://github.com/mahirpatel2005"
+        github: "https://github.com/mahirpatel2005",
+        leetcode: "https://leetcode.com/u/Mahir_R_Patell/"
     },
     logo: "/serbyte-logo.png",
     favicon: "/favicon.ico",
@@ -139,7 +140,8 @@ const SITE_SLUGS = {
         automedics: "/projects/automedics",
         bespoke: "/projects/bespoke",
         iao: "/projects/iron-and-oak",
-        hrms: "/projects/hrms"
+        hrms: "/projects/hrms",
+        codingProfiles: "/coding-profiles"
     }
 };
 const externalLinks = {
@@ -162,10 +164,13 @@ const ALL_PAGES = Object.values(SITE_SLUGS).flatMap((value)=>typeof value === "s
 
 __turbopack_context__.s([
     "default",
-    ()=>manifest
+    ()=>manifest,
+    "dynamic",
+    ()=>dynamic
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/config/siteConfig.ts [app-route] (ecmascript)");
 ;
+const dynamic = "force-static";
 function manifest() {
     return {
         name: __TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["SITE_CONFIG"].title,
@@ -221,7 +226,9 @@ async function GET() {
 
 __turbopack_context__.s([
     "GET",
-    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$manifest$2d2d$route$2d$entry$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__["GET"]
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$manifest$2d2d$route$2d$entry$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__["GET"],
+    "dynamic",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$manifest$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["dynamic"]
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$manifest$2d2d$route$2d$entry$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/app/manifest--route-entry.js [app-route] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$manifest$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/manifest.ts [app-route] (ecmascript)");

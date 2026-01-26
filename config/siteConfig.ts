@@ -55,6 +55,7 @@ export const SITE_NAP = {
     pinterest: "",
     gbp: "",
     github: "https://github.com/mahirpatel2005",
+    leetcode: "https://leetcode.com/u/Mahir_R_Patell/",
   } as const,
   logo: "/serbyte-logo.png",
   favicon: "/favicon.ico",
@@ -71,6 +72,7 @@ export const SITE_SLUGS = {
     bespoke: "/projects/bespoke",
     iao: "/projects/iron-and-oak",
     hrms: "/projects/hrms",
+    codingProfiles: "/coding-profiles",
   },
 } as const
 
