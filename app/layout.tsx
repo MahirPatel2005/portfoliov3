@@ -6,6 +6,7 @@ import { DOMAIN_URL, SITE_CONFIG } from "@/config/siteConfig"
 import { TopBarV2 } from "./components/TopBar/TopBarV2"
 import { MotionWrapper } from "./utils/lazy-ui"
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { bodyAttributes } from "@zero-ui/attributes"
 import { ViewTransitions } from "./utils/ViewTransition"
 import { BottomBlurOverlay } from "./ui/BlurBottomOverlay"
@@ -135,6 +136,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             {/* DO NOT TOUCH THIS UNLESS YOU KNOW WHAT YOU ARE DOING */}
             {/* <Script id="ms-internet-explorer-compatibility" strategy="lazyOnload" src="https://serbyte.net/api/compatibility" /> */}
             <Analytics />
+            <SpeedInsights />
           </>
         )}
       </body>
