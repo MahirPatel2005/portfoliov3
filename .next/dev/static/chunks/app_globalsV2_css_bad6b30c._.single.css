@@ -711,7 +711,6 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
     --tw-duration: .3s;
-    will-change: transform;
     --tw-content: "";
     content: var(--tw-content);
     background-position: 100% 100%;
@@ -757,7 +756,6 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
     --tw-duration: .3s;
-    will-change: transform;
     --tw-content: "";
     content: var(--tw-content);
     background-position: 100% 100%;
@@ -5214,7 +5212,7 @@
     width: var(--width, 100%);
     height: var(--height);
     animation: autoRun var(--speed) linear infinite;
-    will-change: transform;
+    will-change: auto;
     transition: filter .5s;
     position: absolute;
     left: 100%;

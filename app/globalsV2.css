@@ -209,7 +209,7 @@ html {
     @apply relative inline-block overflow-hidden rounded-full text-nowrap;
 
     &::before {
-      @apply pointer-events-none absolute inset-0 z-[-1] -translate-x-full rounded-full opacity-0 blur-[1px] transition-all duration-300 will-change-transform content-[''];
+      @apply pointer-events-none absolute inset-0 z-[-1] -translate-x-full rounded-full opacity-0 blur-[1px] transition-all duration-300 content-[''];
       background-size: 200% 200%;
       background-position: 100% 100%;
       background-image: var(--gradient);
@@ -234,7 +234,7 @@ html {
     @apply relative inline-block overflow-hidden rounded-full text-nowrap;
 
     &::before {
-      @apply pointer-events-none absolute inset-0 z-[-1] -translate-x-full rounded-full opacity-0 blur-[1px] transition-all duration-300 will-change-transform content-[''];
+      @apply pointer-events-none absolute inset-0 z-[-1] -translate-x-full rounded-full opacity-0 blur-[1px] transition-all duration-300 content-[''];
       background-size: 200% 200%;
       background-position: 100% 100%;
       background-image: var(--gradient-alt);
@@ -353,7 +353,7 @@ html {
     animation-delay: calc((var(--speed) / var(--quantity)) * (var(--position) - 1) - var(--speed)) !important;
     left: 100%;
     position: absolute;
-    will-change: transform;
+    will-change: auto;
   }
 
   @keyframes autoRun {
