@@ -217,9 +217,6 @@ export const LeetCodeStats = () => {
                                     light: ['#ebedf0', '#fbbf24', '#f59e0b', '#d97706', '#b45309'],
                                     dark: ['#1f2937', '#fbbf24', '#f59e0b', '#d97706', '#b45309'], // Not using dark mode really but good to have
                                 }}
-                                hideColorLegend
-                                hideMonthLabels={false}
-                                hideTotalCount
                                 blockSize={12}
                                 blockMargin={4}
                                 fontSize={12}

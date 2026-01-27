@@ -1195,9 +1195,6 @@ const LeetCodeStats = ()=>{
                                             '#b45309'
                                         ]
                                     },
-                                    hideColorLegend: true,
-                                    hideMonthLabels: false,
-                                    hideTotalCount: true,
                                     blockSize: 12,
                                     blockMargin: 4,
                                     fontSize: 12
