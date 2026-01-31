@@ -22,6 +22,16 @@ export const MobileMenu: React.FC<{ navItems: { name: string; href: string }[] }
       ))}
       <li className={clsx("mobile-menu-item transform pt-3 transition-all duration-300 ease-in-out")}>
         <Link
+          href="/resume.pdf"
+          download
+          onClick={() => setMobileMenu("closed")}
+          className="bubble-hover block rounded-full border border-orange-100 bg-gradient-to-br from-orange-50 to-amber-50 px-3 py-2 text-center font-semibold text-orange-600 shadow-lg duration-300 hover:shadow-orange-200/50"
+        >
+          Resume
+        </Link>
+      </li>
+      <li className={clsx("mobile-menu-item transform pt-3 transition-all duration-300 ease-in-out")}>
+        <Link
           href={SITE_SLUGS.contact}
           onClick={() => setMobileMenu("closed")}
           className="bubble-hover block rounded-full border border-gray-200 bg-white px-3 py-2 text-center font-medium shadow-lg duration-300 hover:border-white"

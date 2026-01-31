@@ -33,7 +33,14 @@ export const TopBarV2: React.FC = () => {
                   </Link>
                 </li>
               ))}
-              <li className="flex">
+              <li className="flex gap-2">
+                <Link
+                  href="/resume.pdf"
+                  download
+                  className="bubble-hover hidden rounded-full border border-orange-100 bg-gradient-to-br from-orange-50 to-amber-50 px-3 py-1 font-semibold text-orange-600 shadow-md duration-300 hover:translate-y-0.5 hover:shadow-orange-200/50 md:inline-block"
+                >
+                  Resume
+                </Link>
                 <Link
                   href="/#contact"
                   className="bubble-hover hidden rounded-full border border-gray-200 px-3 py-1 font-medium shadow-md duration-300 hover:translate-y-0.5 hover:border-white hover:shadow-none md:inline-block"

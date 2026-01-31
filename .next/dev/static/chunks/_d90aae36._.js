@@ -329,16 +329,18 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
 ;
 ;
-const Link = ({ children, className, target, ...props })=>{
+const Link = ({ children, className, target, download, rel, ...props })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
         ...props,
         "data-vt": true,
         className: className,
         target: target ?? undefined,
+        download: download,
+        rel: rel,
         children: children
     }, void 0, false, {
         fileName: "[project]/app/utils/Link.tsx",
-        lineNumber: 10,
+        lineNumber: 12,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -522,10 +524,11 @@ const MobileMenu = ({ navItems })=>{
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                 className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])("mobile-menu-item transform pt-3 transition-all duration-300 ease-in-out"),
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$utils$2f$Link$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Link"], {
-                    href: __TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SITE_SLUGS"].contact,
+                    href: "/resume.pdf",
+                    download: true,
                     onClick: ()=>setMobileMenu("closed"),
-                    className: "bubble-hover block rounded-full border border-gray-200 bg-white px-3 py-2 text-center font-medium shadow-lg duration-300 hover:border-white",
-                    children: "Contact"
+                    className: "bubble-hover block rounded-full border border-orange-100 bg-gradient-to-br from-orange-50 to-amber-50 px-3 py-2 text-center font-semibold text-orange-600 shadow-lg duration-300 hover:shadow-orange-200/50",
+                    children: "Resume"
                 }, void 0, false, {
                     fileName: "[project]/app/components/TopBar/MobileMenu.tsx",
                     lineNumber: 24,
@@ -534,6 +537,23 @@ const MobileMenu = ({ navItems })=>{
             }, void 0, false, {
                 fileName: "[project]/app/components/TopBar/MobileMenu.tsx",
                 lineNumber: 23,
+                columnNumber: 7
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])("mobile-menu-item transform pt-3 transition-all duration-300 ease-in-out"),
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$utils$2f$Link$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Link"], {
+                    href: __TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SITE_SLUGS"].contact,
+                    onClick: ()=>setMobileMenu("closed"),
+                    className: "bubble-hover block rounded-full border border-gray-200 bg-white px-3 py-2 text-center font-medium shadow-lg duration-300 hover:border-white",
+                    children: "Contact"
+                }, void 0, false, {
+                    fileName: "[project]/app/components/TopBar/MobileMenu.tsx",
+                    lineNumber: 34,
+                    columnNumber: 9
+                }, ("TURBOPACK compile-time value", void 0))
+            }, void 0, false, {
+                fileName: "[project]/app/components/TopBar/MobileMenu.tsx",
+                lineNumber: 33,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
