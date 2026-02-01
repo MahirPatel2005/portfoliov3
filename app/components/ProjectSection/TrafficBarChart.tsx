@@ -40,7 +40,7 @@ export const TrafficBarChart: React.FC<{ startValue: number; endValue: number }>
               }}
               className="mb-2 text-lg font-medium text-slate-700"
             >
-              {item.value.toLocaleString()}/mo
+              {item.value.toLocaleString('en-US')}/mo
             </MotionDiv>
 
             {/* Animated Bar */}

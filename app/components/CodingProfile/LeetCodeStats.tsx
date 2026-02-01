@@ -60,52 +60,132 @@ const CSSDonut = ({ easy, medium, hard, total }: { easy: number, medium: number,
     )
 }
 
+import { leetcodeFallbackData } from "@/app/data/leetcode-data"
+
 export const LeetCodeStats = () => {
-    const [stats, setStats] = useState<LeetCodeData | null>(null)
-    const [contestStats, setContestStats] = useState<LeetCodeContestData | null>(null)
-    const username = SITE_NAP.profiles.leetcode.split("/").pop() || "Mahir_R_Patell"
+    const [stats, setStats] = useState<LeetCodeData>(leetcodeFallbackData as unknown as LeetCodeData)
+    const [contestStats, setContestStats] = useState<LeetCodeContestData>(leetcodeFallbackData as unknown as LeetCodeContestData)
+    const [loading, setLoading] = useState(true)
+
+    const CACHE_KEY_STATS = "leetcode-stats-cache"
+    const CACHE_KEY_CONTEST = "leetcode-contest-cache"
+
+    // Robust username extraction from URL
+    const username = SITE_NAP.profiles.leetcode
+        .split("/")
+        .filter(Boolean)
+        .pop() || "Mahir_R_Patell"
 
     useEffect(() => {
+        // Hydration-safe initial load from localStorage
+        const loadCache = () => {
+            try {
+                const cachedStats = localStorage.getItem(CACHE_KEY_STATS)
+                const cachedContest = localStorage.getItem(CACHE_KEY_CONTEST)
+
+                if (cachedStats) setStats(JSON.parse(cachedStats))
+                if (cachedContest) setContestStats(JSON.parse(cachedContest))
+            } catch (err) {
+                console.error("Failed to load LeetCode data from localStorage", err)
+            }
+        }
+        loadCache()
+
         const fetchData = async () => {
             try {
-                // Fetch Solved Stats
-                const userRes = await fetch(`https://leetcode-stats-api.herokuapp.com/${username}`)
-                const userData = await userRes.json()
-                if (userData.status === "success") {
-                    setStats(userData)
+                const apiBase = "https://leetcodestatsfinder.vercel.app/api/leetcode"
+
+                // Fetch Stats, Calendar, and Contest data in parallel
+                const [statsRes, calendarRes, contestRes] = await Promise.all([
+                    fetch(`${apiBase}/${username}/stats`),
+                    fetch(`${apiBase}/${username}/calendar`),
+                    fetch(`${apiBase}/${username}/contest`)
+                ])
+
+                // Handle Stats
+                if (statsRes.ok) {
+                    const statsData = await statsRes.json()
+                    if (statsData && statsData.submitStats) {
+                        const acNums = statsData.submitStats.acSubmissionNum
+                        const findCount = (diff: string) => acNums.find((item: any) => item.difficulty === diff)?.count || 0
+
+                        const newStats: LeetCodeData = {
+                            totalSolved: findCount("All"),
+                            easySolved: findCount("Easy"),
+                            mediumSolved: findCount("Medium"),
+                            hardSolved: findCount("Hard"),
+                            totalQuestions: 0, // Not provided by this API, will fix below
+                            totalEasy: 0,
+                            totalMedium: 0,
+                            totalHard: 0,
+                            ranking: 0, // Not provided by this API stats endpoint
+                            submissionCalendar: {}
+                        }
+
+                        // Preserve existing totals if available or use fallbacks
+                        setStats(prev => ({
+                            ...prev,
+                            ...newStats,
+                            totalQuestions: prev.totalQuestions || 3300,
+                            totalEasy: prev.totalEasy || 800,
+                            totalMedium: prev.totalMedium || 1600,
+                            totalHard: prev.totalHard || 700,
+                            ranking: prev.ranking
+                        }))
+                    }
                 }
 
-                // Fetch Contest Stats
-                const contestRes = await fetch(`https://alfa-leetcode-api.onrender.com/${username}/contest`)
-                const contestData = await contestRes.json()
-                if (contestData) {
-                    setContestStats(contestData)
+                // Handle Calendar
+                if (calendarRes.ok) {
+                    const calendarData = await calendarRes.json()
+                    if (calendarData && !calendarData.error) {
+                        setStats(prev => ({
+                            ...prev,
+                            submissionCalendar: calendarData
+                        }))
+                        // Persist combined stats to localStorage
+                        setStats(latest => {
+                            localStorage.setItem(CACHE_KEY_STATS, JSON.stringify(latest))
+                            return latest
+                        })
+                    }
                 }
+
+                // Handle Contest
+                if (contestRes.ok) {
+                    const contestData = await contestRes.json()
+                    if (contestData && !contestData.error) {
+                        const mappedContest: LeetCodeContestData = {
+                            contestAttend: contestData.history?.length || 0,
+                            contestRating: contestData.current?.rating || 0,
+                            contestGlobalRanking: contestData.current?.globalRanking || 0,
+                            contestTopPercentage: contestData.current?.topPercentage || 0,
+                            totalParticipants: 0 // Not provided by this API
+                        }
+                        setContestStats(mappedContest)
+                        localStorage.setItem(CACHE_KEY_CONTEST, JSON.stringify(mappedContest))
+                    }
+                }
+
             } catch (err) {
-                console.error("Failed to fetch LeetCode stats", err)
+                console.error("Failed to fetch LeetCode data, using fallback", err)
+            } finally {
+                setLoading(false)
             }
         }
         fetchData()
     }, [username])
 
-    if (!stats) {
-        return (
-            <div className="h-full rounded-3xl border border-gray-200 bg-white p-8 shadow-xl">
-                <div className="flex animate-pulse flex-col gap-4">
-                    <div className="h-12 w-12 rounded-full bg-gray-200"></div>
-                    <div className="h-4 w-32 bg-gray-200"></div>
-                    <div className="h-32 w-full rounded-xl bg-gray-200"></div>
-                </div>
-            </div>
-        )
-    }
+    // No longer returning a full-page pulse if stats (solved) are missing, 
+    // because we have fallback data. We only use loading if we really want to wait for contest.
+    // For better UX, we show the fallback immediately.
 
     // Process submission calendar
-    const calendarData: Activity[] = []
-    if (stats.submissionCalendar) {
-        const today = new Date()
-        const start = subYears(today, 1)
+    let calendarData: Activity[] = []
+    const today = new Date()
+    const start = subYears(today, 1)
 
+    if (stats.submissionCalendar && Object.keys(stats.submissionCalendar).length > 0) {
         Object.entries(stats.submissionCalendar).forEach(([ts, count]) => {
             const date = new Date(parseInt(ts) * 1000)
             if (date >= start) {
@@ -116,6 +196,16 @@ export const LeetCodeStats = () => {
                 })
             }
         })
+    }
+
+    // CRITICAL: ActivityCalendar crashes if data is empty. 
+    // If no data found, provide at least one entry (today with 0 count).
+    if (calendarData.length === 0) {
+        calendarData = [{
+            date: format(today, "yyyy-MM-dd"),
+            count: 0,
+            level: 0
+        }]
     }
 
     return (
@@ -142,7 +232,7 @@ export const LeetCodeStats = () => {
                         </div>
                         <div>
                             <h3 className="text-2xl font-bold text-gray-900">LeetCode</h3>
-                            <p className="text-sm font-medium text-gray-500">Global Ranking: {stats.ranking.toLocaleString()}</p>
+                            <p className="text-sm font-medium text-gray-500">Global Ranking: {stats.ranking.toLocaleString('en-US')}</p>
                         </div>
                     </div>
                     <Link
@@ -197,7 +287,7 @@ export const LeetCodeStats = () => {
                                     </div>
                                     <div className="text-right">
                                         <div className="text-xs text-gray-500">Global Rank</div>
-                                        <div className="font-bold text-gray-900">#{contestStats.contestGlobalRanking.toLocaleString()}</div>
+                                        <div className="font-bold text-gray-900">#{contestStats.contestGlobalRanking.toLocaleString('en-US')}</div>
                                         <div className="text-[10px] text-gray-400">Attended: {contestStats.contestAttend}</div>
                                     </div>
                                 </div>
