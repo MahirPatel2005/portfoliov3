@@ -4,8 +4,8 @@ import { LeetCodeStats } from "@/app/components/CodingProfile/LeetCodeStats"
 import { AnimatedH1 } from "@/app/components/ui/AnimatedH1"
 
 export const metadata: Metadata = {
-    title: "Coding Profiles | Mahir Patel",
-    description: "Check out my coding stats on GitHub and LeetCode.",
+    title: "Mahir Patel - Coding Profiles | GitHub & LeetCode Stats",
+    description: "Explore Mahir Patel's coding stats, open-source contributions on GitHub, and problem-solving progress on LeetCode.",
 }
 
 export default function CodingProfilesPage() {

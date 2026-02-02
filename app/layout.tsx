@@ -61,7 +61,7 @@ export const metadata: Metadata = {
         url: SITE_CONFIG.ogImage,
         width: 1200,
         height: 630,
-        alt: SITE_CONFIG.title,
+        alt: (SITE_CONFIG as any).ogImageAlt || SITE_CONFIG.title,
       },
     ],
     locale: "en_US",
@@ -72,6 +72,8 @@ export const metadata: Metadata = {
     title: SITE_CONFIG.title,
     description: SITE_CONFIG.description,
     images: [SITE_CONFIG.ogImage],
+    creator: "@mahirpatel", // Recommended to add if available
+    site: "@mahirpatel",
   },
   alternates: {
     canonical: DOMAIN_URL,

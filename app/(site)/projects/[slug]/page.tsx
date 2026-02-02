@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             ? project.hero.description
             : `Details about the ${project.hero.client} project.`,
         alternates: {
-            canonical: `/projects/${project.slug}`,
+            canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://mahir-patel.tech'}/projects/${project.slug}`,
         }
     }
 }
