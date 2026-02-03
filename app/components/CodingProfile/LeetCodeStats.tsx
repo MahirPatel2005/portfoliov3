@@ -93,74 +93,89 @@ export const LeetCodeStats = () => {
 
         const fetchData = async () => {
             try {
-                const apiBase = "https://leetcodestatsfinder.vercel.app/api/leetcode"
+                const apiBase = "https://alfa-leetcode-api.onrender.com"
 
-                // Fetch Stats, Calendar, and Contest data in parallel
-                const [statsRes, calendarRes, contestRes] = await Promise.all([
-                    fetch(`${apiBase}/${username}/stats`),
+                // Fetch Stats, Calendar, Contest, and Profile data (for ranking) in parallel
+                // alfa-leetcode-api endpoints: /:username/solved, /:username/calendar, /:username/contest, /:username, /problems
+                const [statsRes, calendarRes, contestRes, profileRes, questionsRes] = await Promise.all([
+                    fetch(`${apiBase}/${username}/solved`),
                     fetch(`${apiBase}/${username}/calendar`),
-                    fetch(`${apiBase}/${username}/contest`)
+                    fetch(`${apiBase}/${username}/contest`),
+                    fetch(`${apiBase}/${username}`),
+                    fetch(`${apiBase}/problems?limit=1`)
                 ])
 
-                // Handle Stats
+                // Handle Stats (Solved Problems)
                 if (statsRes.ok) {
                     const statsData = await statsRes.json()
-                    if (statsData && statsData.submitStats) {
-                        const acNums = statsData.submitStats.acSubmissionNum
-                        const findCount = (diff: string) => acNums.find((item: any) => item.difficulty === diff)?.count || 0
-
-                        const newStats: LeetCodeData = {
-                            totalSolved: findCount("All"),
-                            easySolved: findCount("Easy"),
-                            mediumSolved: findCount("Medium"),
-                            hardSolved: findCount("Hard"),
-                            totalQuestions: 0, // Not provided by this API, will fix below
-                            totalEasy: 0,
-                            totalMedium: 0,
-                            totalHard: 0,
-                            ranking: 0, // Not provided by this API stats endpoint
-                            submissionCalendar: {}
+                    if (statsData) {
+                        const newStats: Partial<LeetCodeData> = {
+                            totalSolved: statsData.solvedProblem || 0,
+                            easySolved: statsData.easySolved || 0,
+                            mediumSolved: statsData.mediumSolved || 0,
+                            hardSolved: statsData.hardSolved || 0,
                         }
 
-                        // Preserve existing totals if available or use fallbacks
                         setStats(prev => ({
                             ...prev,
                             ...newStats,
-                            totalQuestions: prev.totalQuestions || 3300,
-                            totalEasy: prev.totalEasy || 800,
-                            totalMedium: prev.totalMedium || 1600,
-                            totalHard: prev.totalHard || 700,
-                            ranking: prev.ranking
                         }))
                     }
                 }
 
-                // Handle Calendar
-                if (calendarRes.ok) {
-                    const calendarData = await calendarRes.json()
-                    if (calendarData && !calendarData.error) {
+                // Handle Profile (Ranking)
+                if (profileRes.ok) {
+                    const profileData = await profileRes.json()
+                    if (profileData && profileData.ranking) {
                         setStats(prev => ({
                             ...prev,
-                            submissionCalendar: calendarData
+                            ranking: profileData.ranking
                         }))
-                        // Persist combined stats to localStorage
-                        setStats(latest => {
-                            localStorage.setItem(CACHE_KEY_STATS, JSON.stringify(latest))
-                            return latest
-                        })
                     }
                 }
 
-                // Handle Contest
+                // Handle Total Questions
+                if (questionsRes.ok) {
+                    const questionsData = await questionsRes.json()
+                    if (questionsData && questionsData.totalQuestions) {
+                        setStats(prev => ({
+                            ...prev,
+                            totalQuestions: questionsData.totalQuestions
+                        }))
+                    }
+                }
+
+                // Handle Calendar (Submission History)
+                if (calendarRes.ok) {
+                    const calendarData = await calendarRes.json()
+                    if (calendarData && calendarData.submissionCalendar) {
+                        // The API returns submissionCalendar as a stringified JSON
+                        try {
+                            const parsedCalendar = JSON.parse(calendarData.submissionCalendar)
+                            setStats(prev => {
+                                const latest = {
+                                    ...prev,
+                                    submissionCalendar: parsedCalendar
+                                }
+                                localStorage.setItem(CACHE_KEY_STATS, JSON.stringify(latest))
+                                return latest
+                            })
+                        } catch (e) {
+                            console.error("Failed to parse submission calendar JSON", e)
+                        }
+                    }
+                }
+
+                // Handle Contest (Contest Rating and History)
                 if (contestRes.ok) {
                     const contestData = await contestRes.json()
                     if (contestData && !contestData.error) {
                         const mappedContest: LeetCodeContestData = {
-                            contestAttend: contestData.history?.length || 0,
-                            contestRating: contestData.current?.rating || 0,
-                            contestGlobalRanking: contestData.current?.globalRanking || 0,
-                            contestTopPercentage: contestData.current?.topPercentage || 0,
-                            totalParticipants: 0 // Not provided by this API
+                            contestAttend: contestData.contestAttend || 0,
+                            contestRating: contestData.contestRating || 0,
+                            contestGlobalRanking: contestData.contestGlobalRanking || 0,
+                            contestTopPercentage: contestData.contestTopPercentage || 0,
+                            totalParticipants: contestData.totalParticipants || 0
                         }
                         setContestStats(mappedContest)
                         localStorage.setItem(CACHE_KEY_CONTEST, JSON.stringify(mappedContest))

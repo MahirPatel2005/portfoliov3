@@ -326,33 +326,58 @@ __turbopack_context__.s([
 ]);
 const DOMAIN_URL = "https://mahir-patel.tech";
 const SITE_CONFIG = {
-    title: "Mahir Patel - Full-Stack Developer Portfolio | MERN Stack",
-    description: "Portfolio of Mahir Patel, a full-stack developer specializing in the MERN stack (MongoDB, Express, React, Node.js), Next.js, and scaling web applications.",
+    title: "Mahir Patel | Full-Stack Developer & MERN Specialist",
+    description: "Mahir Patel is a skilled Full-Stack Developer specializing in the MERN stack (MongoDB, Express, React, Node.js) and Next.js. Explore his portfolio of scalable web applications and software engineering projects.",
     url: DOMAIN_URL ?? "https://mahir-patel.tech",
     siteName: "Mahir Patel",
     keywords: [
         "Mahir Patel",
-        "Full-Stack Developer",
-        "MERN Stack",
-        "Next.js",
-        "React",
-        "Node.js",
-        "MongoDB",
-        "JavaScript",
-        "India",
-        "Freelance Developer",
-        "Software Engineer",
-        "Web Development",
-        "UI/UX Design",
-        "Frontend Developer",
+        "Mahir Rakesh Patel",
+        "Mahir Patel Portfolio",
+        "Mahir Patel Developer",
+        "Full-Stack Developer India",
+        "MERN Stack Specialist",
+        "Next.js Developer India",
+        "React.js Expert",
+        "Node.js Backend Developer",
+        "MongoDB Portfolio",
+        "Software Engineer India",
+        "Freelance Web Developer India",
+        "Frontend Engineer",
+        "Scalable Web Architecture",
+        "C++ Programmer",
+        "System Design Portfolio",
+        "APIHub Project",
+        "Numble Game Developer",
+        "developer",
+        "freelancer",
+        "portfolio",
+        "mahir patel",
+        "mahir rakesh patel",
+        "mahir r patel",
+        "mahir rakesh",
+        "mahir",
         "Backend Developer",
-        "React Developer India",
-        "Next.js Expert",
-        "Scalable Web Apps",
-        "C++",
-        "System Design"
+        "Full-Stack Developer",
+        "MERN Stack Developer",
+        "MERN Stack Specialist",
+        "MongoDB Developer",
+        "MongoDB Specialist",
+        "Express.js Developer",
+        "Express.js Specialist",
+        "Node.js Developer",
+        "Node.js Specialist",
+        "React.js Developer",
+        "React.js Specialist",
+        "Next.js Developer",
+        "Next.js Specialist",
+        "Web Developer",
+        "Web Designer",
+        "Software Engineer",
+        "Freelance Web Developer India"
     ],
     ogImage: "/assets/bg-home-poster-optimized.webp",
+    ogImageAlt: "Mahir Patel - Full-Stack Developer Portfolio Hero Image",
     logo: "/serbyte-logo.png",
     authors: [
         {
@@ -1567,18 +1592,32 @@ const siteGraph = {
         {
             "@type": "Person",
             "@id": `${SITE}/#mahir-patel`,
-            name: "Mahir Patel",
-            url: SITE,
-            jobTitle: "Full-Stack Engineer",
-            image: {
+            "name": "Mahir Patel",
+            "url": SITE,
+            "jobTitle": "Full-Stack Engineer",
+            "image": {
                 "@id": `${SITE}#headshot`
             },
-            worksFor: {
+            "worksFor": {
                 "@id": `${SITE}#org`
             },
-            sameAs: Object.values(__TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SITE_NAP"].profiles).filter((url)=>!!url),
-            email: __TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SITE_NAP"].email,
-            knowsAbout: __TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SITE_CONFIG"].keywords
+            "sameAs": Object.values(__TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SITE_NAP"].profiles).filter((url)=>!!url),
+            "email": __TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SITE_NAP"].email,
+            "knowsAbout": [
+                "React",
+                "Next.js",
+                "Node.js",
+                "Express.js",
+                "MongoDB",
+                "JavaScript",
+                "TypeScript",
+                "C++",
+                "REST APIs",
+                "UI/UX Design",
+                "System Design",
+                "Scalable Web Applications"
+            ],
+            "description": "Mahir Patel is a Full-Stack Developer specializing in the MERN stack and Next.js, building modern and scalable web applications."
         },
         {
             "@type": "WebSite",
@@ -1684,7 +1723,7 @@ const metadata = {
                 url: __TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SITE_CONFIG"].ogImage,
                 width: 1200,
                 height: 630,
-                alt: __TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SITE_CONFIG"].title
+                alt: __TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SITE_CONFIG"].ogImageAlt || __TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SITE_CONFIG"].title
             }
         ],
         locale: "en_US",
@@ -1696,7 +1735,9 @@ const metadata = {
         description: __TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SITE_CONFIG"].description,
         images: [
             __TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SITE_CONFIG"].ogImage
-        ]
+        ],
+        creator: "@mahirpatel",
+        site: "@mahirpatel"
     },
     alternates: {
         canonical: __TURBOPACK__imported__module__$5b$project$5d2f$config$2f$siteConfig$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["DOMAIN_URL"]
@@ -1715,24 +1756,24 @@ const RootLayout = ({ children })=>{
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$utils$2f$lazy$2d$dot$2d$cursor$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["DesktopCursor"], {}, void 0, false, {
                             fileName: "[project]/app/layout.tsx",
-                            lineNumber: 85,
+                            lineNumber: 87,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$utils$2f$ViewTransition$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ViewTransitions"], {}, void 0, false, {
                             fileName: "[project]/app/layout.tsx",
-                            lineNumber: 86,
+                            lineNumber: 88,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$utils$2f$lazy$2d$splash$2d$cursor$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["LazySplashCursor"], {}, void 0, false, {
                             fileName: "[project]/app/layout.tsx",
-                            lineNumber: 87,
+                            lineNumber: 89,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "custom:mx-auto xxs:mx-3.5 pointer-events-none absolute inset-0 z-1 max-w-6xl [background-image:url('/assets/framer-noise.png')] [background-size:128px] bg-repeat opacity-6 md:mx-5 lg:mx-8"
                         }, void 0, false, {
                             fileName: "[project]/app/layout.tsx",
-                            lineNumber: 88,
+                            lineNumber: 90,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1742,17 +1783,17 @@ const RootLayout = ({ children })=>{
                                     className: "custom:mx-auto xxs:border-x pointer-events-none absolute inset-0 z-0 mx-3.5 max-w-6xl border-gray-200 md:mx-5 lg:mx-8"
                                 }, void 0, false, {
                                     fileName: "[project]/app/layout.tsx",
-                                    lineNumber: 90,
+                                    lineNumber: 92,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$ui$2f$BlurBottomOverlay$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BottomBlurOverlay"], {}, void 0, false, {
                                     fileName: "[project]/app/layout.tsx",
-                                    lineNumber: 91,
+                                    lineNumber: 93,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$TopBar$2f$TopBarV2$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["TopBarV2"], {}, void 0, false, {
                                     fileName: "[project]/app/layout.tsx",
-                                    lineNumber: 92,
+                                    lineNumber: 94,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 children,
@@ -1764,24 +1805,24 @@ const RootLayout = ({ children })=>{
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/app/layout.tsx",
-                                    lineNumber: 95,
+                                    lineNumber: 97,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Footer$2f$FooterV2$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FooterV2"], {}, void 0, false, {
                                     fileName: "[project]/app/layout.tsx",
-                                    lineNumber: 102,
+                                    lineNumber: 104,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/layout.tsx",
-                            lineNumber: 89,
+                            lineNumber: 91,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/layout.tsx",
-                    lineNumber: 84,
+                    lineNumber: 86,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 ("TURBOPACK compile-time value", "development") === "production" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -1802,7 +1843,7 @@ const RootLayout = ({ children })=>{
                             }
                         }, void 0, false, {
                             fileName: "[project]/app/layout.tsx",
-                            lineNumber: 107,
+                            lineNumber: 109,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -1810,7 +1851,7 @@ const RootLayout = ({ children })=>{
                             strategy: "afterInteractive"
                         }, void 0, false, {
                             fileName: "[project]/app/layout.tsx",
-                            lineNumber: 123,
+                            lineNumber: 125,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -1825,17 +1866,17 @@ const RootLayout = ({ children })=>{
         `
                         }, void 0, false, {
                             fileName: "[project]/app/layout.tsx",
-                            lineNumber: 127,
+                            lineNumber: 129,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$next$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Analytics"], {}, void 0, false, {
                             fileName: "[project]/app/layout.tsx",
-                            lineNumber: 138,
+                            lineNumber: 140,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$vercel$2f$speed$2d$insights$2f$dist$2f$next$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SpeedInsights"], {}, void 0, false, {
                             fileName: "[project]/app/layout.tsx",
-                            lineNumber: 139,
+                            lineNumber: 141,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
@@ -1843,12 +1884,12 @@ const RootLayout = ({ children })=>{
             ]
         }, void 0, true, {
             fileName: "[project]/app/layout.tsx",
-            lineNumber: 83,
+            lineNumber: 85,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/app/layout.tsx",
-        lineNumber: 82,
+        lineNumber: 84,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
