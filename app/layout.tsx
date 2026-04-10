@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   keywords: [...SITE_CONFIG.keywords],
   verification: {
-    google: "google-site-verification-code", // Replace with your code
+    google: "oO5l7vF3mj3dr-uqXdHYk6oOR7GFZWfbDvDUGK8FfAA",
     yandex: "yandex-verification-code",
     me: "your-personal-verification-code",
   },
