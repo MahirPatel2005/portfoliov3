@@ -123,7 +123,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             />
             {/* Google Analytics */}
             <Script
-              src="https://www.googletagmanager.com/gtag/js?id=G-DL21RJVKMB"
+              src="https://www.googletagmanager.com/gtag/js?id=G-251HSH0B96"
               strategy="afterInteractive"
             />
             <Script id="google-analytics" strategy="afterInteractive">
@@ -132,7 +132,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-DL21RJVKMB');
+          gtag('config', 'G-251HSH0B96');
         `}
             </Script>
             {/* DO NOT TOUCH THIS UNLESS YOU KNOW WHAT YOU ARE DOING */}
